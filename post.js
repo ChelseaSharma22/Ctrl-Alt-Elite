@@ -23,7 +23,7 @@ const logout = () => {
     .then((data) => console.log(data))
     .finally(() => {
       window.localStorage.removeItem("login-data");
-      window.location.assign("../pages/login.html");
+      window.location.assign("login.html");
     });
 };
 
