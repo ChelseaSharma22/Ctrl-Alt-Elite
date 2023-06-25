@@ -3,7 +3,7 @@
 // declear and assign variables
 const $ = document.querySelectorAll.bind(document);
 const registerForm = $("#registerform")[0];
-
+const displayUpdate = $("#displayupdate")[0];
 registerForm.addEventListener("submit", (e) => {
     e.preventDefault();
     e.stopPropagation();
@@ -24,17 +24,27 @@ registerForm.addEventListener("submit", (e) => {
         });
 
         var requestOptions = {
-        method: 'POST',
-        headers: myHeaders,
-        body: raw,
-        redirect: 'follow'
+            method: 'POST',
+            headers: myHeaders,
+            body: raw,
+            redirect: 'follow'
         };
 
         fetch("https://microbloglite.herokuapp.com/api/users", requestOptions)
         .then(response => response.json())
         .then(result => {
-            alert(`You have be create the account with ${result.userName}`);
-            console.log(result)
+            if(result.username===undefined){
+                displayUpdate.innerHTML = `<p>error msg ${result.message}</p>`;
+                console.log(result);
+
+            }else{
+                displayUpdate.innerHTML = `<p>You user name is ${result.username}, you will be redirect to the login page soon</p>`;
+                setTimeout(() => {
+                    window.location.href = "login.html";// Redirect to the login page
+                }, 4000); 
+            }
+
+            
         })
         .catch(error => console.log('error', error));
     }

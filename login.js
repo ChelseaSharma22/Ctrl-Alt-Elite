@@ -16,9 +16,9 @@ loginForm.addEventListener("submit", (event) => {
   loginButton.disabled = true;
 
   login(loginData)
-    .then(() => {
-      loginButton.disabled = false;
-    })
+    // .then(() => {
+    //   loginButton.disabled = false;
+    // })
     .catch((error) => {
       console.error(error);
       // display an error message
@@ -37,14 +37,15 @@ function login(loginData) {
   };
 
   return fetch(apiBaseURL + "/auth/login", options)
-    .then((response) => {
+    .then(response => {
       if (!response.ok) {
         throw new Error("Login failed. Please try again.");
       }
       return response.json();
     })
-    .then((responseData) => {
-      window.localStorage.setItem("login-data", JSON.stringify(responseData));
+    .then(responseData => {
+      let data=JSON.stringify(responseData);
+      window.localStorage.setItem("login-data", data );
       window.location.assign("index.html"); // redirect
     });
 }

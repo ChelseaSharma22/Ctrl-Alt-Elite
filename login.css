@@ -1,9 +1,27 @@
+:root {
+  --purplrdark: #925E78;
+  --purplelight: #BD93BD;
+  --pale: #F2EDEB;
+  --pink: #F05365;
+  --yellow: #FABC2A;
+}
+.maincontent {
+  margin: auto;
+  margin-top: 100px;
+  background-color: rgba(255, 255, 255, 1);
+  gap: 10px;
+  padding: 10px 20px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  font-family: inherit;
+  
+}
 .form {
     width: 300px;
     margin: auto;
     margin-top: 100px;
-    background-color: rgba(255, 255, 255, 1);
-    display: flex;
+    background-color: var(--purplelight);
+    display: inline-flex;
     flex-direction: column;
     gap: 10px;
     padding: 10px 20px;
@@ -12,6 +30,21 @@
     font-family: inherit;
   }
   
+  #intro {
+    width: auto;
+    height: auto;
+    margin: auto;
+    margin-top: 100px;
+    background-color: var(--yellow);
+    display: inline-flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    font-family: inherit;
+
+  }
   .input {
     font-size: 15px;
     padding: 15px 10px;
@@ -125,3 +158,63 @@
     }
   }
   
+  #gamediv {
+    width: 600px;
+    height: 200px;
+    background-color: rgba(255, 255, 255, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #game {
+      width: 500px;
+      height: 200px;
+      background-color: rgba(255, 255, 255, 1);
+  
+  }
+
+  #character {
+    width: 50px;
+    height: 50px;
+    background-image: url(img/donut1.jpg);
+    position: relative;
+    top: 150px;
+  }
+
+  .animate {
+    animation: character 500ms;
+  }
+
+  @keyframes character {
+    0% {top: 150px;}
+    30% {top: 80px;}
+    70% {top: 80px;}
+    100% {top: 150px;}
+  }
+
+  #block {
+    width: 40px;
+    height: 40px;
+    background-image: url(img/rock1.jpg);
+    position: relative;
+    top: 110px;
+    left: 460px;
+    animation: block 2s infinite linear;
+  }
+
+  @keyframes block {
+    0% {left: 460px;}
+    100% {left: 0px;}
+  }
+
+  #gamebtn {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    display: flex;
+    position: relative;
+  }
+
+  #score {
+    position: relative;
+    align-self: flex-end;
+  }
