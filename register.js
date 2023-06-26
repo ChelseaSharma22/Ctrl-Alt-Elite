@@ -3,7 +3,7 @@
 // declear and assign variables
 const $ = document.querySelectorAll.bind(document);
 const registerForm = $("#registerform")[0];
-
+const displayUpdate = $("#displayupdate")[0];
 registerForm.addEventListener("submit", (e) => {
     e.preventDefault();
     e.stopPropagation();
@@ -19,26 +19,35 @@ registerForm.addEventListener("submit", (e) => {
 
         const raw = JSON.stringify({
         "fullName": fullName,
-        "username": userName,
+        "username": userName + "donut",
         "password": setPassword
         });
 
+        
+
         var requestOptions = {
-        method: 'POST',
-        headers: myHeaders,
-        body: raw,
-        redirect: 'follow'
+            method: 'POST',
+            headers: myHeaders,
+            body: raw,
+            redirect: 'follow'
         };
 
         fetch("https://microbloglite.herokuapp.com/api/users", requestOptions)
-  .then(response => response.json())
-  .then(result => {
-    alert(`You have created the account with ${result.userName}`);
-    console.log(result);
+        .then(response => response.json())
+        .then(result => {
+            if(result.username===undefined){
+                displayUpdate.innerHTML = `<p>error msg ${result.message}</p>`;
+                console.log(result);
 
-    // Redirect to the login page
-    window.location.href = "login.html";
-  })
-  .catch(error => console.log('error', error));
+            }else{
+                displayUpdate.innerHTML = `<p>You user name is ${result.username.substr(0,result.username.length-5)}, you will be redirect to the login page soon</p>`;
+                setTimeout(() => {
+                    window.location.href = "login.html";// Redirect to the login page
+                }, 4000); 
+            }
+
+            
+        })
+        .catch(error => console.log('error', error));
     }
 })

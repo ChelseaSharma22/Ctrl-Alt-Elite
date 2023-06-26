@@ -1,6 +1,15 @@
 
 const apiBaseURL = "https://microbloglite.herokuapp.com";
 
+
+// References to HTML elements
+const postForm = document.getElementById("postForm");
+const postsContainer = document.getElementById("posts");
+const logoutBtn = document.getElementById("logoutBtn");
+const recentBtn = document.getElementById("recent");
+const createPostInput = document.getElementById("createPost");
+
+
 // Helper function to check if the user is logged in
 const loggedIn = () => {
   const loginJSON = window.localStorage.getItem("login-data");
@@ -59,7 +68,7 @@ const fetchRecentPosts = () => {
   return fetchPosts().then((data) => {
     return data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
   });
-};
+}
 
 // Function to like a post
 const likePost = (post) => {
@@ -75,7 +84,10 @@ const likePost = (post) => {
       }),
     };
 
-    fetch(apiBaseURL + "/api/likes", options);
+    fetch(apiBaseURL + "/api/likes", options)
+    .then(()=>{
+      recentBtn.click()
+    });
   }
 };
 
@@ -95,8 +107,11 @@ const dislikePost = (post) => {
         },
       };
 
-      fetch(apiBaseURL + `/api/likes/${likeToDelete._id}`, options);
-    }
+      fetch(apiBaseURL + `/api/likes/${likeToDelete._id}`, options)
+      .then(()=>{
+        recentBtn.click()
+      });
+  }
   }
 };
 
@@ -111,13 +126,16 @@ const deletePost = (post) => {
       },
     };
 
-    fetch(apiBaseURL + `/api/posts/${post._id}`, options);
+    fetch(apiBaseURL + `/api/posts/${post._id}`, options)
+    .then(()=>{
+      recentBtn.click()
+    });
   }
 };
 
 // Function to delete user's own post
 const deleteUserPost = (post) => {
-  if (loggedIn() !== null && loggedIn().username === post.username) {
+  if (loggedIn() !== null && loggedIn().username === (post.username+"donut")) {
     const options = {
       method: "DELETE",
       headers: {
@@ -126,7 +144,10 @@ const deleteUserPost = (post) => {
       },
     };
 
-    fetch(apiBaseURL + `/api/posts/${post._id}`, options);
+    fetch(apiBaseURL + `/api/posts/${post._id}`, options)
+    .then(_=>{
+      recentBtn.click()
+    });
   }
 };
 
@@ -151,6 +172,9 @@ const createPost = (content) => {
       .then((data) => {
         console.log("New post created:", data);
         createPostInput.value = "";
+        recentBtn.click()
+        
+
       })
       .catch((error) => {
         console.error("Error creating post:", error);
@@ -158,19 +182,13 @@ const createPost = (content) => {
   } else {
     console.error("User is not logged in. Cannot create post.");
   }
+  
 };
 
 // Check if the user is logged in
 const userLoggedIn = loggedIn();
 
 if (userLoggedIn) {
-  // References to HTML elements
-  const postForm = document.getElementById("postForm");
-  const createPostInput = document.getElementById("createPost");
-  const postsContainer = document.getElementById("posts");
-  const logoutBtn = document.getElementById("logoutBtn");
-  const recentBtn = document.getElementById("recent");
-
   // Event listeners
   recentBtn.addEventListener("click", () => {
     fetchRecentPosts().then((data) => {
@@ -186,6 +204,7 @@ if (userLoggedIn) {
     console.log(data);
     updateUI(data);
   });
+  
 
   // Add event listener for form submission
   postForm.addEventListener("submit", (event) => {
@@ -195,7 +214,19 @@ if (userLoggedIn) {
   });
 
   // Function to update the UI with posts
-  const updateUI = (posts) => {
+  const updateUI = (allPosts) => {
+
+    let posts=allPosts.filter(post=>{
+      if((new RegExp(/.*donut/)).test(post.username)){
+        post.username=post.username.substr(0,post.username.length-5);
+        //console.log(post.username)
+        return post
+      }
+    })
+
+    // if(isShowAll){
+    //   posts=allPosts
+    // }
     postsContainer.innerHTML = "";
 
     posts.forEach((post) => {
@@ -206,24 +237,24 @@ if (userLoggedIn) {
 
       const postContent = document.createElement("div");
       postContent.className = "post-content";
-      postContent.innerHTML = `<p>${text}</p>`;
+      postContent.innerHTML = `<p>${text.replaceAll("<","&lt;").replaceAll(">","&rt;")}</p>`;
 
       const postDetails = document.createElement("div");
       postDetails.className = "post-details";
       postDetails.innerHTML = `<span class="post-likes">${likes.length} likes</span> | <span class="post-author">${username}</span> | <span class="post-date">${createdAt}</span>`;
 
       const likeBtn = document.createElement("button");
-      likeBtn.id = _id;
+      likeBtn.id = "like*"+_id;
       likeBtn.addEventListener("click", () => likePost(post));
       likeBtn.textContent = "Like";
 
       const dislikeBtn = document.createElement("button");
-      dislikeBtn.id = _id;
+      dislikeBtn.id ="dislike*"+ _id;
       dislikeBtn.addEventListener("click", () => dislikePost(post));
       dislikeBtn.textContent = "Dislike";
 
       const deleteBtn = document.createElement("button");
-      deleteBtn.id = _id;
+      deleteBtn.id = "delete*"+ _id;
       deleteBtn.addEventListener("click", () => deleteUserPost(post));
       deleteBtn.textContent = "Delete";
 
@@ -234,8 +265,22 @@ if (userLoggedIn) {
       postDiv.appendChild(deleteBtn);
 
       postsContainer.appendChild(postDiv);
+
     });
   };
+
+  document.getElementById("addimg").addEventListener("change",e=>{
+    console.log(document.getElementById("addimg").files[0]);
+  })
+
 } else {
   window.location.assign("../pages/login.html");
 }
+  
+
+// for( let btn of document.querySelectorAll(".post > button")){
+//   btn.click()
+//   btn.addEventListener("click",e=>{
+//     location.reload()
+//   })
+// }
