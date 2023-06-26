@@ -1,3 +1,13 @@
+/* Declare Color pallete roots */
+:root {
+    --violet: #925E78;
+    --purple: #BD93BD;
+    --white: #F2EDEB;
+    --pink: #F05365;
+    --yellow: #FABC2A;
+}
+
+
 .form {
     width: 300px;
     margin: auto;
