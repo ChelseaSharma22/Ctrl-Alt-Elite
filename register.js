@@ -19,9 +19,11 @@ registerForm.addEventListener("submit", (e) => {
 
         const raw = JSON.stringify({
         "fullName": fullName,
-        "username": userName,
+        "username": userName + "donut",
         "password": setPassword
         });
+
+        
 
         var requestOptions = {
             method: 'POST',
@@ -38,7 +40,7 @@ registerForm.addEventListener("submit", (e) => {
                 console.log(result);
 
             }else{
-                displayUpdate.innerHTML = `<p>You user name is ${result.username}, you will be redirect to the login page soon</p>`;
+                displayUpdate.innerHTML = `<p>You user name is ${result.username.substr(0,result.username.length-5)}, you will be redirect to the login page soon</p>`;
                 setTimeout(() => {
                     window.location.href = "login.html";// Redirect to the login page
                 }, 4000); 

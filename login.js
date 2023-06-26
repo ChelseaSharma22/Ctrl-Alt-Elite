@@ -9,9 +9,11 @@ loginForm.addEventListener("submit", (event) => {
   event.preventDefault();
 
   const loginData = {
-    username: loginForm.querySelector("#username").value,
+    username: loginForm.querySelector("#username").value+'donut',
     password: loginForm.querySelector("#password").value,
   };
+
+  window.localStorage.setItem("usename",loginData.username)
 
   loginButton.disabled = true;
 
