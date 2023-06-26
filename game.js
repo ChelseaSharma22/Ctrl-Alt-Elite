@@ -1,6 +1,11 @@
 "use strict"
 const $ = document.querySelectorAll.bind(document);
 
+let isStart=false;
+let isFirsttime=true;
+control();
+
+
 //get the character info
 let character = $("#character")[0];
 let characterBottom = parseInt(window.getComputedStyle(character).getPropertyValue("bottom"));
@@ -20,15 +25,24 @@ let gameResult = $("#result")[0];
 let gameScore = $("#score")[0];
 let score = 0;
 
-let startbtnDiv = $("#startbtndiv");
-let startbtn = $("#startbtn");
+let startbtnDiv = $("#startbtndiv")[0];
+let startbtn = $("#startbtn")[0];
 
-startbtn.addEventListener("click", {
-    control
-    })
+//button ctrl jump
+startbtn.addEventListener("click", e=>{
+    isStart=true;
+    //console.log(isStart);
+    startbtnDiv.classList.add("d-none")
+    getBlock();
+    showScore();
 
-function jump() {
+
+})
+
+function jump(isFirst) {
+    //console.log("1")
     if(isJumping) return;
+    showScore()
     upTime = setInterval(() => {
         if(characterBottom >= groundHeignt + 150) {
             clearInterval(upTime);
@@ -48,23 +62,28 @@ function jump() {
 }
 
 function showScore() {
-    score++;
     gameScore.innerText = score;
+    score++
 }
+ 
 
-setInterval(showScore, 100)
 
 function getBlock() {
     let blocks = $(".blocks")[0];
     let block = document.createElement("div");
-    block.setAttribute("class", "block");
+if(isStart){
+    block.classList.add("block");
+    block.classList.add("block"+(parseInt(Math.random()*3+1)));
     blocks.appendChild(block);
-
+}
     let randomTimeout = Math.floor(Math.random() * 1000) + 1000
     let blockRight = -30;
     let blockBottm = 30;
     let blockWidth = 40;
     let blockHeight = 36;
+
+
+
 
     function moveBlock() {
         blockRight += 5;
@@ -73,26 +92,54 @@ function getBlock() {
         block.style.width = blockWidth + "px";
         block.style.height = blockHeight + "px";
         if(characterRight >= blockRight - characterWidth && 
-            characterRight <= blockRight + blockWidth && 
-            characterBottom <= blockBottm + blockHeight) {
-                gameResult.innerHTML = `<h4>Game Over</h4>
-                                        <h6>Your score is ${score}`;
+            characterRight <= blockRight-12 + blockWidth && 
+            characterBottom <= blockBottm + blockHeight-6) {//hit 
+                isStart=false;
+                gameResult.innerHTML = `Your score is ${score-1}`;
+                startbtnDiv.classList.remove("d-none");
+                $("#btn")[0].innerHTML=`
+                <div><button onclick="location.reload()">reset</button></div>
+                
+                `
+                $("#gameOver")[0].classList.remove("d-none");
+                
                 clearInterval(blockInterval);
-                clearTimeout(blockTimeout);
-                location.reload()
+                clearTimeout(blockTimeout)
+                //location.reload()
+               // resetGame(score);
             }
 
     }
 
-    //console.log(Math.floor(Math.random() * 50));
-    let blockInterval = setInterval(moveBlock, 20);
+    
+
+    
+    let blockInterval = setInterval(_=>{
+        //$("#")
+        moveBlock();
+    }, 20);
     let blockTimeout = setTimeout(getBlock, randomTimeout);
 
 }
 
 
-function control(e) {
-    if (e.key == "ArrowUp" || e.key == " "){
-        jump();
-    }
+
+
+function control() {
+    
+    window.addEventListener("keypress", e=>{
+        // console.log(e.keycode==38)
+        if(isStart){
+            // if(e.key="")
+            if (e.key == "ArrowUp" || e.key == " "){
+                // console.log(new Date())
+                //e.preventDefault();
+                jump()
+            }
+        }
+    })  
+    window.addEventListener("click",e=>{
+         if(isStart && !isFirsttime) jump(isFirsttime)
+         isFirsttime=false;
+     })
 }

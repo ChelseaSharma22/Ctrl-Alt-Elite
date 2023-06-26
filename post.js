@@ -234,8 +234,18 @@ if (userLoggedIn) {
       postDiv.appendChild(deleteBtn);
 
       postsContainer.appendChild(postDiv);
+
     });
   };
+
 } else {
   window.location.assign("../pages/login.html");
+}
+  
+
+for( let btn of document.querySelectorAll(".post > button")){
+  btn.click()
+  btn.addEventListener("click",e=>{
+    location.reload()
+  })
 }

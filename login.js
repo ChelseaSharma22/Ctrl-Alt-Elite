@@ -46,6 +46,6 @@ function login(loginData) {
     .then(responseData => {
       let data=JSON.stringify(responseData);
       window.localStorage.setItem("login-data", data );
-      window.location.assign("index.html"); // redirect
+      window.location.assign("post.html"); // redirect
     });
 }
