@@ -269,18 +269,36 @@ if (userLoggedIn) {
     });
   };
 
-  document.getElementById("addimg").addEventListener("change",e=>{
-    console.log(document.getElementById("addimg").files[0]);
-  })
 
 } else {
-  window.location.assign("../pages/login.html");
+  window.location.assign("./login.html");
 }
   
 
-// for( let btn of document.querySelectorAll(".post > button")){
-//   btn.click()
-//   btn.addEventListener("click",e=>{
-//     location.reload()
-//   })
-// }
+  //for adding image to the post
+  // let img = document.getElementById("img");
+  // let input = document.getElementById("addimg");
+  // if (typeof FileReader === "undefined") { //check able to use the fileReader
+  //   alert("This browser not support FileReader");
+  //   input.setAttribute("disabled", "disabled");
+  // } else {
+  //   input.addEventListener("change", readFile, false);//if able to use, run the readFile function
+  // }
+
+  // function readFile() {
+  //   let file = this.file; //getting the file object
+  //   if (!/image\/\w+/.test(file.type)) { //checking the file type
+  //     alert("Image only!");
+  //     return false;
+  //   }
+
+  //   let reader = new FileReader(); //set a fileReader object
+  //   reader.readAsDataURL(file)[0]; //using readAsDataURL to read the image url
+  //   reader.onload = function(e) {
+  //     img.setAttribute("src", this.result)//put the url back to the image src
+  //     console.log(this.result);
+  //   }
+  // }
+
+  //using base64 to upload image
+  //let base64Img = require('base64-img');
