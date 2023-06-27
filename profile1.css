@@ -604,8 +604,8 @@
                 align-items: center;
               }
               .post form .content img{
-                cursor: default;
-                max-width: 52px;
+                cursor: default !important;
+                max-width: 52px !important;
               }
               .post form .content .details{
                 margin: -3px 0 0 12px;

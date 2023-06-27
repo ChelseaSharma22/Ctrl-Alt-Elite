@@ -53,6 +53,8 @@ const fullNameInput = document.getElementById("fullNameInput");
 const bioInput = document.getElementById("bioInput");
 const saveEditsBtn = document.getElementById("editSaveBtn");
 
+const ProfileName = document.getElementById("ProfileName");
+
 
 window.addEventListener("load", function () {
     moreInfo();
@@ -106,6 +108,7 @@ function moreInfo() {
             console.log(data);
             userFullName.innerHTML = data.fullName;
             bio.innerHTML = data.bio;
+            ProfileName.innerHTML = data.fullName;
             
         });
 }

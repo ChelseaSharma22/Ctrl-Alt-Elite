@@ -247,8 +247,82 @@ if (userLoggedIn) {
     event.preventDefault();
     const postContent = createPostInput.value;
     createPost(postContent);
+    // fetchRecentPosts().then((data) => {
+    //   //console.log(data);
+    //   updateUI(data);
+    // }
+    posts.forEach((post) => {
+      const { text, likes, username, createdAt, _id } = post;
+
+      // let text2=text;
+  
+      let contentHtml = ""
+
+      if(text.split("data:image").length==1){
+        //console.log(text)
+        contentHtml=`<p>${text.replaceAll("<","&lt;").replaceAll(">","&rt;").replace("data:image","")}</p>`
+      }else{
+       // console.log(text)
+        let textMain=text.split("data:image")[0];
+        let textImg=text.split("data:image")[1];
+        
+        //emoji use 
+        
+
+          // contentHtml=`<p>${textMain.replaceAll("<","&lt;").replaceAll(">","&rt;")}</p>`
+          //   +(textImg!=undefined?`<br><img src="data:image${textImg}">`:"")
+
+      }
+
+/* 
+        for(e of emojiGroup){
+          let emj=e
+        let eName=emj.emojiName
+        // console.log(emj)
+        //contentHtml=contentHtml.replaceAll("%"+eName+"%","okokok")
+        contentHtml=contentHtml.replaceAll("%"+eName+"%",`<img width=25 height=25 src="${emj.src}" class="emoji ${emj.id}"/>`)
+      } */
+      //一样个也。。点解上边可以replaceAll下面就no
+      const postDiv = document.createElement("div");
+      postDiv.className = "post";
+
+      const postContent = document.createElement("div");
+      postContent.className = "post-content";
+      postContent.innerHTML = contentHtml;
+
+      const postDetails = document.createElement("div");
+      postDetails.className = "post-details";
+      postDetails.innerHTML = `<span class="post-likes">${likes.length} likes</span> | <span class="post-author">${username}</span> | <span class="post-date">${createdAt}</span>`;
+
+      const likeBtn = document.createElement("button");
+      likeBtn.id = "like*"+_id;
+      likeBtn.addEventListener("click", () => likePost(post));
+      likeBtn.textContent = "Like";
+
+      const dislikeBtn = document.createElement("button");
+      dislikeBtn.id ="dislike*"+ _id;
+      dislikeBtn.addEventListener("click", () => dislikePost(post));
+      dislikeBtn.textContent = "Dislike";
+
+      const deleteBtn = document.createElement("button");
+      deleteBtn.id = "delete*"+ _id;
+      deleteBtn.addEventListener("click", () => deleteUserPost(post));
+      deleteBtn.textContent = "Delete";
+
+      postDiv.appendChild(postContent);
+      postDiv.appendChild(postDetails);
+      postDiv.appendChild(likeBtn);
+      postDiv.appendChild(dislikeBtn);
+      postDiv.appendChild(deleteBtn);
+
+      postsContainer.appendChild(postDiv);
+
+    });
+  }
+    
+    )
     console.log (postContent);
-  });
+  };
 
   // Function to update the UI with posts
   const updateUI = (allPosts) => {
@@ -334,12 +408,10 @@ if (userLoggedIn) {
 
     });
   };
-
-
-} else {
-  window.location.assign("./login.html");
-}
-  
+// else {
+ // window.location.assign("./login.html");
+//}
+//} 
 
   //for adding image to the post
   if (typeof FileReader === "undefined") { //check able to use the fileReader
