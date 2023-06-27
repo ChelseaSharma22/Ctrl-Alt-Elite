@@ -50,6 +50,12 @@ img {
   width: 100%;
 }
 
+#emojis img {
+  height: 25px;
+  width: 25px;
+  display: inline;
+}
+
 .btn {
   display: inline-block;
   padding: var(--btn-padding);
