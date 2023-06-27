@@ -49,5 +49,9 @@ function login(loginData) {
       let data=JSON.stringify(responseData);
       window.localStorage.setItem("login-data", data );
       window.location.assign("post.html"); // redirect
+      
+
+     
+
     });
 }
