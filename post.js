@@ -247,6 +247,7 @@ if (userLoggedIn) {
     event.preventDefault();
     const postContent = createPostInput.value;
     createPost(postContent);
+    console.log (postContent);
   });
 
   // Function to update the UI with posts

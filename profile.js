@@ -378,3 +378,52 @@ const userLoggedIn = loggedIn();
 
   //using base64 to upload image
   //let base64Img = require('base64-img');
+ /*  const createPost = (content) => {
+    //store img data
+  
+    let imgBase64=imghidden.value
+  
+    if(imghidden.value==""){
+      combineContent=content;
+    }
+    else {
+      combineContent = content +imgBase64
+    }
+    
+    
+  
+  
+    
+    imghidden.value="";
+    input.value="";
+    if (loggedIn() !== null) {
+      const requestBody = {
+        text: combineContent,
+      };
+  
+      const options = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${loggedIn().token}`,
+        },
+        body: JSON.stringify(requestBody),
+      };
+  
+      fetch(apiBaseURL + "/api/posts", options)
+        .then((response) => response.json())
+        .then((data) => {
+          console.log("New post created:", data);
+          createPostInput.value = "";
+          recentBtn.click()
+          
+  
+        })
+        .catch((error) => {
+          console.error("Error creating post:", error);
+        });
+    } else {
+      console.error("User is not logged in. Cannot create post.");
+    }
+    
+  }; */
