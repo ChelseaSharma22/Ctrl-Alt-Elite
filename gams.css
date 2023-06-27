@@ -1,17 +1,33 @@
+html, body {
+    height: 100%;
+}
+body {
+    background-image: url(img/1.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
 #intro {
-    width: auto;
-    height: auto;
-    margin: auto;
-    margin-top: 100px;
     background-color: #FABC2A;
-    display: inline-flex;
-    flex-direction: column;
     gap: 10px;
     padding: 10px 20px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     font-family: inherit;
+    position: absolute;
+    left: 50%;
+    top: 53%;
+    transform: translate(-50%, -50%);
   }
+
+#weblogo {
+    border-radius: 50%;
+    width: 150px;
+    margin-bottom: 5px;
+    display: block;
+    margin: 10px auto 10px auto;
+    cursor: pointer;
+}
 
 #gamediv {
     width: 500px;
@@ -76,5 +92,6 @@
     right: 10px;
     top: 10px;
 }
+
 
 

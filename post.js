@@ -261,9 +261,6 @@ if (userLoggedIn) {
       }
     })
 
-    // if(isShowAll){
-    //   posts=allPosts
-    // }
     postsContainer.innerHTML = "";
 
     posts.forEach((post) => {
@@ -293,11 +290,10 @@ if (userLoggedIn) {
         for(e of emojiGroup){
           let emj=e
         let eName=emj.emojiName
-        console.log(emj)
         //contentHtml=contentHtml.replaceAll("%"+eName+"%","okokok")
         contentHtml=contentHtml.replaceAll("%"+eName+"%",`<img width=25 height=25 src="${emj.src}" class="emoji ${emj.id}"/>`)
       }
-      //一样个也。。点解上边可以replaceAll下面就no
+      
       const postDiv = document.createElement("div");
       postDiv.className = "post";
 
@@ -371,6 +367,3 @@ if (userLoggedIn) {
   }
 
 
-
-  //using base64 to upload image
-  //let base64Img = require('base64-img');

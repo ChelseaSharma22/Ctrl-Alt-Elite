@@ -5,6 +5,12 @@
   --pink: #F05365;
   --yellow: #FABC2A;
 }
+
+body { 
+  background: url(img/2.png) no-repeat center center fixed; 
+  background-size: 100% 100%;
+}
+
 .maincontent {
   margin: auto;
   margin-top: 100px;
@@ -148,73 +154,3 @@
     animation: spin89345 1s linear infinite;
   }
   
-  @keyframes spin89345 {
-    0% {
-      transform: rotate(0deg);
-    }
-  
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-  
-  #gamediv {
-    width: 600px;
-    height: 200px;
-    background-color: rgba(255, 255, 255, 1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  #game {
-      width: 500px;
-      height: 200px;
-      background-color: rgba(255, 255, 255, 1);
-  
-  }
-
-  #character {
-    width: 50px;
-    height: 50px;
-    background-image: url(img/donut1.jpg);
-    position: relative;
-    top: 150px;
-  }
-
-  .animate {
-    animation: character 500ms;
-  }
-
-  @keyframes character {
-    0% {top: 150px;}
-    30% {top: 80px;}
-    70% {top: 80px;}
-    100% {top: 150px;}
-  }
-
-  #block {
-    width: 40px;
-    height: 40px;
-    background-image: url(img/rock1.jpg);
-    position: relative;
-    top: 110px;
-    left: 460px;
-    animation: block 2s infinite linear;
-  }
-
-  @keyframes block {
-    0% {left: 460px;}
-    100% {left: 0px;}
-  }
-
-  #gamebtn {
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-    display: flex;
-    position: relative;
-  }
-
-  #score {
-    position: relative;
-    align-self: flex-end;
-  }
