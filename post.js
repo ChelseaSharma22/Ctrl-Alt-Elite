@@ -9,6 +9,26 @@ const logoutBtn = document.getElementById("logoutBtn");
 const recentBtn = document.getElementById("recent");
 const createPostInput = document.getElementById("createPost");
 
+const imghidden = document.getElementById("imghidden");
+const input = document.getElementById("addimg");
+
+
+
+// emoji group
+let emojiGroup=[]
+let emojisTag = document.getElementById("emojis").getElementsByTagName("img");
+for(dom of emojisTag ){ //replace dom loop
+  let _this=dom;
+  dom.addEventListener("click",function(){
+    console.log(_this.id)
+    document.getElementById("createPost").value+=("%"+_this.id+"%")
+  })
+  let tempemj={}
+  tempemj.emojiName=dom.id
+  tempemj.src=dom.src
+
+  emojiGroup.push(tempemj)
+}
 
 // Helper function to check if the user is logged in
 const loggedIn = () => {
@@ -153,9 +173,26 @@ const deleteUserPost = (post) => {
 
 // Function to create a post
 const createPost = (content) => {
+  //store img data
+
+  let imgBase64=imghidden.value
+
+  if(imghidden.value==""){
+    combineContent=content;
+  }
+  else {
+    combineContent = content +imgBase64
+  }
+  
+  
+
+
+  
+  imghidden.value="";
+  input.value="";
   if (loggedIn() !== null) {
     const requestBody = {
-      text: content,
+      text: combineContent,
     };
 
     const options = {
@@ -192,7 +229,7 @@ if (userLoggedIn) {
   // Event listeners
   recentBtn.addEventListener("click", () => {
     fetchRecentPosts().then((data) => {
-      console.log(data);
+     // console.log(data);
       updateUI(data);
     });
   });
@@ -201,7 +238,7 @@ if (userLoggedIn) {
 
   // Retrieve recent posts and update UI
   fetchRecentPosts().then((data) => {
-    console.log(data);
+    //console.log(data);
     updateUI(data);
   });
   
@@ -232,12 +269,41 @@ if (userLoggedIn) {
     posts.forEach((post) => {
       const { text, likes, username, createdAt, _id } = post;
 
+      // let text2=text;
+  
+      let contentHtml = ""
+
+      if(text.split("data:image").length==1){
+        //console.log(text)
+        contentHtml=`<p>${text.replaceAll("<","&lt;").replaceAll(">","&rt;").replace("data:image","")}</p>`
+      }else{
+       // console.log(text)
+        let textMain=text.split("data:image")[0];
+        let textImg=text.split("data:image")[1];
+        
+        //emoji use 
+        
+
+          contentHtml=`<p>${textMain.replaceAll("<","&lt;").replaceAll(">","&rt;")}</p>`
+            +(textImg!=undefined?`<br><img src="data:image${textImg}">`:"")
+
+      }
+
+
+        for(e of emojiGroup){
+          let emj=e
+        let eName=emj.emojiName
+        console.log(emj)
+        //contentHtml=contentHtml.replaceAll("%"+eName+"%","okokok")
+        contentHtml=contentHtml.replaceAll("%"+eName+"%",`<img width=25 height=25 src="${emj.src}" class="emoji ${emj.id}"/>`)
+      }
+      //一样个也。。点解上边可以replaceAll下面就no
       const postDiv = document.createElement("div");
       postDiv.className = "post";
 
       const postContent = document.createElement("div");
       postContent.className = "post-content";
-      postContent.innerHTML = `<p>${text.replaceAll("<","&lt;").replaceAll(">","&rt;")}</p>`;
+      postContent.innerHTML = contentHtml;
 
       const postDetails = document.createElement("div");
       postDetails.className = "post-details";
@@ -276,29 +342,35 @@ if (userLoggedIn) {
   
 
   //for adding image to the post
-  // let img = document.getElementById("img");
-  // let input = document.getElementById("addimg");
-  // if (typeof FileReader === "undefined") { //check able to use the fileReader
-  //   alert("This browser not support FileReader");
-  //   input.setAttribute("disabled", "disabled");
-  // } else {
-  //   input.addEventListener("change", readFile, false);//if able to use, run the readFile function
-  // }
+  if (typeof FileReader === "undefined") { //check able to use the fileReader
+    alert("This browser not support FileReader");
+    input.setAttribute("disabled", "disabled");
+  } else {
+    input.addEventListener("change", function(){
+      let file = this.files[0]
+// console.log(file)
+    try{
+        if (!/image\/\w+/.test(file.type)) { //checking the file type
+          alert("Image only!");
+          return false;
+        }
+    
+        let reader = new FileReader(); //set a fileReader object
+        reader.readAsDataURL(file); //using readAsDataURL to read the image url
+        reader.onload = function(e) {
+          imghidden.value=this.result;
+          //console.log(this.result);
+        }
 
-  // function readFile() {
-  //   let file = this.file; //getting the file object
-  //   if (!/image\/\w+/.test(file.type)) { //checking the file type
-  //     alert("Image only!");
-  //     return false;
-  //   }
+    }catch(e){
+      imghidden.value="";
+    }
 
-  //   let reader = new FileReader(); //set a fileReader object
-  //   reader.readAsDataURL(file)[0]; //using readAsDataURL to read the image url
-  //   reader.onload = function(e) {
-  //     img.setAttribute("src", this.result)//put the url back to the image src
-  //     console.log(this.result);
-  //   }
-  // }
+    }, false);//if able to use, run the readFile function
+    
+  }
+
+
 
   //using base64 to upload image
   //let base64Img = require('base64-img');

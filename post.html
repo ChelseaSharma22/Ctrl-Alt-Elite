@@ -23,9 +23,16 @@
     <div>
       <form id="postForm" >
         <textarea id="createPost" placeholder="Write your post"></textarea>
+          <div id="emojis" class="btn-group">
+            <img src="./img/emoji/cry.png" id="cry" class="cry">
+            <img src="./img/emoji/happy.png" id="happy" class="happy">
+            <img src="./img/emoji/hearteye.png" id="hearteye" class="hearteye">
+            <img src="./img/emoji/laughtear.png" id="laughtear" class="laughtear">
+            <img src="./img/emoji/heart.png" id="heart" class="heart">
+          </div>
           <div class="input imgdiv">
             <input type="file" id="addimg" accept="image/png, image/jpg">
-            <img id="img">
+            <input id="imghidden" type="hidden">
           </div>
           <button type="submit">Create Post</button>
       </form>
