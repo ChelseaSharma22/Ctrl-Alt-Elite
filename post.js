@@ -210,7 +210,7 @@ function fetchPosts() {
       },
     };
 
-    return fetch(apiBaseURL + "/api/posts", options)
+    return fetch(apiBaseURL + "/api/posts?limit=2000&offset=0", options)
       .then((response) => response.json())
       .catch((error) => {
         console.error("Error fetching posts:", error);
