@@ -12,7 +12,7 @@ const imghidden = document.getElementById("imghidden");
 const input = document.getElementById("addimg");
 
 
-
+/* 
 // emoji group
 let emojiGroup=[]
 let emojisTag = document.getElementById("emojis").getElementsByTagName("img");
@@ -27,7 +27,7 @@ for(dom of emojisTag ){ //replace dom loop
   tempemj.src=dom.src
 
   emojiGroup.push(tempemj)
-}
+} */
 
 // Helper function to check if the user is logged in
 const loggedIn = () => {
@@ -283,19 +283,19 @@ if (userLoggedIn) {
         //emoji use 
         
 
-          contentHtml=`<p>${textMain.replaceAll("<","&lt;").replaceAll(">","&rt;")}</p>`
-            +(textImg!=undefined?`<br><img src="data:image${textImg}">`:"")
+          // contentHtml=`<p>${textMain.replaceAll("<","&lt;").replaceAll(">","&rt;")}</p>`
+          //   +(textImg!=undefined?`<br><img src="data:image${textImg}">`:"")
 
       }
 
-
+/* 
         for(e of emojiGroup){
           let emj=e
         let eName=emj.emojiName
-        console.log(emj)
+        // console.log(emj)
         //contentHtml=contentHtml.replaceAll("%"+eName+"%","okokok")
         contentHtml=contentHtml.replaceAll("%"+eName+"%",`<img width=25 height=25 src="${emj.src}" class="emoji ${emj.id}"/>`)
-      }
+      } */
       //一样个也。。点解上边可以replaceAll下面就no
       const postDiv = document.createElement("div");
       postDiv.className = "post";
