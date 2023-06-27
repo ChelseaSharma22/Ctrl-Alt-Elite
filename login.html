@@ -2,24 +2,30 @@
 <html lang="en">
 
 <head>
+  <script src="https://kit.fontawesome.com/3a55529ed6.js" crossorigin="anonymous"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="login.css" />
-  <title>Login Page</title>
+  <!--CSS Style Sheet-->
+  <link rel="stylesheet" href="login.css"/>
+  <title>Login</title>
+  <h1>Welcome to the Doughnut Diaries!</h1>
+
 </head>
 
 <body>
-  <div id="loader_cont">
+   <div id="loader_cont">
     <div class="loader"></div>
-  </div>
+   </div>
+
   <form class="form" id="loginForm">
     <input id="username" placeholder="Username" class="input" type="text" />
     <input placeholder="Password" class="input" type="password" id="password" />
     <button id="loginBtn">Login</button>
-    <a id="forgotPassword" href="#">Forgotten password?</a>
-    <button class="create" id="createAccountBtn">Create new account</button>
+    <a id="forgotPassword" href="#">Forgot password?</a>
+    <button class="create" id="createAccountBtn">Create New Account</button>
   </form>
+
+
   <script src="login.js"></script>
 </body>
-
 </html>
