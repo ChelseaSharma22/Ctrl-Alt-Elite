@@ -198,6 +198,7 @@ if (userLoggedIn) {
   });
 
   logoutBtn.addEventListener("click", logout);
+  logoutBtn.addEventListener(alert, "hi")
 
   // Retrieve recent posts and update UI
   fetchRecentPosts().then((data) => {
