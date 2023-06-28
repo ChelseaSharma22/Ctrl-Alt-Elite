@@ -8,6 +8,7 @@ const postsContainer = document.getElementById("posts");
 const logoutBtn = document.getElementById("logoutBtn");
 const recentBtn = document.getElementById("recent");
 const createPostInput = document.getElementById("createPost");
+const imghidden = document.getElementById("imghidden");
 
 
 // Helper function to check if the user is logged in
@@ -114,7 +115,7 @@ function moreInfo() {
 }
 
 
-//my code 
+
 
 
 
@@ -132,13 +133,7 @@ function moreInfo() {
 const userLoggedIn = loggedIn();
 
  if (userLoggedIn) {
-//   // Event listeners
-//  recentBtn.addEventListener("click", () => {
-//   fetchRecentPosts().then((data) => {
-//        console.log(data);
-//       updateUI(data);
-//     });
-//  });
+
 
    logoutBtn.addEventListener("click", logout);
 
@@ -146,75 +141,6 @@ const userLoggedIn = loggedIn();
    
  
 
-//   // Retrieve recent posts and update UI
-//   fetchRecentPosts().then((data) => {
-//     console.log(data);
-//     updateUI(data);
-//   });
-  
-
-//   // Add event listener for form submission
-//   postForm.addEventListener("submit", (event) => {
-//     event.preventDefault();
-//     const postContent = createPostInput.value;
-//     createPost(postContent);
-//   });
-
-//   // Function to update the UI with posts
-//   const updateUI = (allPosts) => {
-
-//     let posts=allPosts.filter(post=>{
-//       if((new RegExp(/.*donut/)).test(post.username)){
-//         post.username=post.username.substr(0,post.username.length-5);
-//         //console.log(post.username)
-//         return post
-//       }
-//     })
-
-//     // if(isShowAll){
-//     //   posts=allPosts
-//     // }
-//     postsContainer.innerHTML = "";
-
-//     posts.forEach((post) => {
-//       const { text, likes, username, createdAt, _id } = post;
-
-//       const postDiv = document.createElement("div");
-//       postDiv.className = "post";
-
-//       const postContent = document.createElement("div");
-//       postContent.className = "post-content";
-//       postContent.innerHTML = `<p>${text.replaceAll("<","&lt;").replaceAll(">","&rt;")}</p>`;
-
-//       const postDetails = document.createElement("div");
-//       postDetails.className = "post-details";
-//       postDetails.innerHTML = `<span class="post-likes">${likes.length} likes</span> | <span class="post-author">${username}</span> | <span class="post-date">${createdAt}</span>`;
-
-//       const likeBtn = document.createElement("button");
-//       likeBtn.id = "like*"+_id;
-//       likeBtn.addEventListener("click", () => likePost(post));
-//       likeBtn.textContent = "Like";
-
-//       const dislikeBtn = document.createElement("button");
-//       dislikeBtn.id ="dislike*"+ _id;
-//       dislikeBtn.addEventListener("click", () => dislikePost(post));
-//       dislikeBtn.textContent = "Dislike";
-
-//       const deleteBtn = document.createElement("button");
-//       deleteBtn.id = "delete*"+ _id;
-//       deleteBtn.addEventListener("click", () => deleteUserPost(post));
-//       deleteBtn.textContent = "Delete";
-
-//       postDiv.appendChild(postContent);
-//       postDiv.appendChild(postDetails);
-//       postDiv.appendChild(likeBtn);
-//       postDiv.appendChild(dislikeBtn);
-//       postDiv.appendChild(deleteBtn);
-
-//       postsContainer.appendChild(postDiv);
-
-//     });
-//   };
 
 
 } else {
@@ -225,20 +151,20 @@ const userLoggedIn = loggedIn();
 function createPost(content) {
   //store img data
 
-   let imgBase64=imghidden.value
+  //  let imgBase64=imghidden.value
 
-  if(imghidden.value==""){
-    combineContent=content;
-  }
-  else {
-    combineContent = content +imgBase64
-  }
+  // if(imghidden.value==""){
+  //   combineContent=content;
+  // }
+  // else {
+  //   combineContent = content +imgBase64
+  // }
   
-  imghidden.value="";
-  input.value="";
+  // imghidden.value="";
+  // input.value="";
   if (loggedIn() !== null) {
     const requestBody = {
-      text: combineContent,
+      text: content,
     };
 
     const options = {
