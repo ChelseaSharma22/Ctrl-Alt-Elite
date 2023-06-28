@@ -116,19 +116,6 @@ function moreInfo() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 //Check if the user is logged in
 const userLoggedIn = loggedIn();
 
@@ -182,7 +169,7 @@ function createPost(content) {
         console.log("New post created:", data);
         createPostInput.value = "";
        
-        
+        window.location.href= "post.html";
 
       })
       .catch((error) => {
@@ -198,4 +185,8 @@ postForm.addEventListener("submit", (event) => {
   event.preventDefault();
   const postContent = createPostInput.value;
   createPost(postContent);
+  
 });
+ 
+
+
