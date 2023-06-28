@@ -12,19 +12,26 @@
   src: url(Balloons-YYVy.ttf);
 }
 
+html, body {
+  height: 100%;
+  width: 100%;
+}
 
 .form {
   width: 300px;
-  margin: auto;
-  margin-top: 100px;
   background-color:#EE9BAA;
   display: flex;
   flex-direction: column;
   gap: 10px;
   padding: 10px 20px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
+  border-radius: 5px 0 0 5px;
   font-family: inherit;
+  margin-top: 5px;
+}
+
+#registerform {
+  border-radius: 5px;
 }
 
 .input {
@@ -97,7 +104,20 @@
   font-weight: bold;
 }
 
-#createAccountBtn:hover {
+#signupButton {
+  margin-top: 10px;
+  padding: 15px 15px;
+  align-self: center;
+  background: var(--yellow);
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+
+}
+
+#createAccountBtn:hover, #signupButton:hover {
   background: #cb9822;
 }
 .loader {
@@ -142,7 +162,7 @@
  
   body{
    background-image: url("images/2.png");
-   background-size: 100%,100%;
+   background-size: 100% 100%;
    background-repeat: no-repeat;
   }
 
@@ -165,17 +185,15 @@ justify-content: center;
     
 .card{
   width: 300px;
-  margin: auto;
-  margin-top: 100px;
   background-color:#EE9BAA;
-  display: flex;
   -ms-flex-align:start;
-  flex-direction: column;
   gap: 10px;
   padding: 10px 20px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
+  border-radius: 0 5px 5px 0;
   font-family: inherit;
+  text-align: center;
+  margin-top: 5px;
 }
 
 p{
@@ -185,4 +203,19 @@ p{
 h5{
   text-align: center;
   
+}
+
+#row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 100px;
+  justify-content: center;
+  align-content: center;
+}
+
+main {
+  display: flex;
+  margin-top: 100px;
+  justify-content: center;
+  align-content: center;
 }

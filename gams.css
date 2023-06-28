@@ -1,6 +1,30 @@
+/* Declare Color pallete roots */
+:root {
+    --violet: #925E78;
+    --purple: #BD93BD;
+    --white: #F2EDEB;
+    --pink: #F05365;
+    --yellow: #FABC2A; 
+}
 html, body {
     height: 100%;
 }
+
+@font-face {
+    font-family:ballonFont;
+    src: url(Balloons-YYVy.ttf);
+  }  
+
+h6, h3 {
+    font-family: ballonFont;
+    font-weight: bolder;
+}
+
+h3 {
+    text-align: center;
+    color: var(--violet);
+}
+
 body {
     background-image: url(img/background1.png);
     background-size: 100% 100%;
@@ -8,7 +32,7 @@ body {
 }
 
 #intro {
-    background-color: #FABC2A;
+    background-color: var(--yellow);
     gap: 10px;
     padding: 10px 20px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
