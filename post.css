@@ -45,10 +45,50 @@ body {
   overflow: hidden;
 }
 
-img {
+
+/*CSS for images*/
+#cheldonut-img {
+  
   display: block;
   width: 100%;
 }
+
+#aflakdonut-img {
+  
+  display: block;
+  width: 100%;
+}
+
+#bryanof-img {
+  
+  display: block;
+  width: 100%;
+}
+
+#yuenmochi-img {
+  
+  display: block;
+  width: 100%;
+}
+
+#mbjordan-img {
+  display: block;
+  width: 100%;
+}
+
+#anniedonut-img {
+  display: block;
+  width: 100%;
+}
+
+#doughnut-logo-img {
+  display: block;
+  width: 100%;
+}
+
+/*end of CSS for images*/
+
+
 
 .btn {
   display: inline-block;
@@ -464,7 +504,7 @@ body {
 
 
 #postForm {
-  margin-bottom: 20px; /* Add some spacing between the form and the btn-group */
+  margin-bottom: 20px; 
   
 }
 
