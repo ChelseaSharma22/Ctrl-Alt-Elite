@@ -3,14 +3,21 @@
     --violet: #925E78;
     --purple: #BD93BD;
     --white: #F2EDEB;
-    --pink: #F05365;
-    --yellow: #FABC2A;
+    --pink: #f096a1;
+    --yellow: #FABC2A; 
 }
+
+@font-face {
+  font-family:ballonFont;
+  src: url(Balloons-YYVy.ttf);
+}
+
+
 .form {
   width: 300px;
   margin: auto;
-  margin-top: 170px;
-  background-color: rgb(255, 255, 255);
+  margin-top: 125px;
+  background-color: var(--pink);
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -40,7 +47,7 @@
   width: 100%;
   padding: 10px 20px;
   align-self: center;
-  background: #1877f2;
+  background:var(--purple);
   border: none;
   border-radius: 5px;
   color: #fff;
@@ -138,3 +145,21 @@
    background-size: 100%,100%;
    background-repeat: no-repeat;
   }
+
+  h1{
+    text-align: center;
+    font-family:ballonFont;
+    font-size: 50px;
+    color: var(--yellow);
+    }
+
+  #logo{
+    height: 140px;
+    width: 140px;
+  }
+ 
+#head{
+  display: flex;
+justify-content: center;
+}
+    
