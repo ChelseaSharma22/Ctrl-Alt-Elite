@@ -53,6 +53,8 @@ const fullNameInput = document.getElementById("fullNameInput");
 const bioInput = document.getElementById("bioInput");
 const saveEditsBtn = document.getElementById("editSaveBtn");
 
+const ProfileName = document.getElementById("ProfileName");
+
 
 window.addEventListener("load", function () {
     moreInfo();
@@ -106,156 +108,25 @@ function moreInfo() {
             console.log(data);
             userFullName.innerHTML = data.fullName;
             bio.innerHTML = data.bio;
+            ProfileName.innerHTML = data.fullName;
             
         });
 }
 
 
 //my code 
-// Function to fetch posts
-const fetchPosts = () => {
-  if (loggedIn() !== null) {
-    console.log("loged in !")
-    const options = {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${loggedIn().token}`,
-      },
-    };
 
-    return fetch(apiBaseURL + "/api/posts", options)
-      .then((response) => response.json())
-      .catch((error) => {
-        console.error("Error fetching posts:", error);
-        return [];
-      });
-  } else {
-    return Promise.resolve([]);
-  }
-};
 
-// Function to fetch recent posts
-const fetchRecentPosts = () => {
-  return fetchPosts().then((data) => {
-    return data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
-  });
-}
 
-// Function to like a post
-const likePost = (post) => {
-  if (loggedIn() !== null) {
-    const options = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${loggedIn().token}`,
-      },
-      body: JSON.stringify({
-        postId: post._id,
-      }),
-    };
 
-    fetch(apiBaseURL + "/api/likes", options)
-    .then(()=>{
-      recentBtn.click()
-    });
-  }
-};
 
-// Function to dislike a post
-const dislikePost = (post) => {
-  if (loggedIn() !== null) {
-    const likeToDelete = post.likes.find(
-      (like) => like.username === loggedIn().username
-    );
 
-    if (likeToDelete) {
-      const options = {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${loggedIn().token}`,
-        },
-      };
 
-      fetch(apiBaseURL + `/api/likes/${likeToDelete._id}`, options)
-      .then(()=>{
-        recentBtn.click()
-      });
-  }
-  }
-};
 
-// Function to delete a post
-const deletePost = (post) => {
-  if (loggedIn() !== null) {
-    const options = {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${loggedIn().token}`,
-      },
-    };
 
-    fetch(apiBaseURL + `/api/posts/${post._id}`, options)
-    .then(()=>{
-      recentBtn.click()
-    });
-  }
-};
 
-// Function to delete user's own post
-const deleteUserPost = (post) => {
-  if (loggedIn() !== null && loggedIn().username === (post.username+"donut")) {
-    const options = {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${loggedIn().token}`,
-      },
-    };
 
-    fetch(apiBaseURL + `/api/posts/${post._id}`, options)
-    .then(_=>{
-      recentBtn.click()
-    });
-  }
-};
 
-// Function to create a post
-const createPost = (content) => {
-  if (loggedIn() !== null) {
-    const requestBody = {
-      text: content,
-    };
-
-    const options = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${loggedIn().token}`,
-      },
-      body: JSON.stringify(requestBody),
-    };
-
-    fetch(apiBaseURL + "/api/posts", options)
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("New post created:", data);
-        createPostInput.value = "";
-        recentBtn.click()
-        
-
-      })
-      .catch((error) => {
-        console.error("Error creating post:", error);
-      });
-  } else {
-    console.error("User is not logged in. Cannot create post.");
-  }
-  
-};
 
 //Check if the user is logged in
 const userLoggedIn = loggedIn();
@@ -351,30 +222,54 @@ const userLoggedIn = loggedIn();
 }
   
 
-  //for adding image to the post
-  // let img = document.getElementById("img");
-  // let input = document.getElementById("addimg");
-  // if (typeof FileReader === "undefined") { //check able to use the fileReader
-  //   alert("This browser not support FileReader");
-  //   input.setAttribute("disabled", "disabled");
-  // } else {
-  //   input.addEventListener("change", readFile, false);//if able to use, run the readFile function
-  // }
+function createPost(content) {
+  //store img data
 
-  // function readFile() {
-  //   let file = this.file; //getting the file object
-  //   if (!/image\/\w+/.test(file.type)) { //checking the file type
-  //     alert("Image only!");
-  //     return false;
-  //   }
+   let imgBase64=imghidden.value
 
-  //   let reader = new FileReader(); //set a fileReader object
-  //   reader.readAsDataURL(file)[0]; //using readAsDataURL to read the image url
-  //   reader.onload = function(e) {
-  //     img.setAttribute("src", this.result)//put the url back to the image src
-  //     console.log(this.result);
-  //   }
-  // }
+  if(imghidden.value==""){
+    combineContent=content;
+  }
+  else {
+    combineContent = content +imgBase64
+  }
+  
+  imghidden.value="";
+  input.value="";
+  if (loggedIn() !== null) {
+    const requestBody = {
+      text: combineContent,
+    };
 
-  //using base64 to upload image
-  //let base64Img = require('base64-img');
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${loggedIn().token}`,
+      },
+      body: JSON.stringify(requestBody),
+    };
+
+    fetch(apiBaseURL + "/api/posts", options)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("New post created:", data);
+        createPostInput.value = "";
+       
+        
+
+      })
+      .catch((error) => {
+        console.error("Error creating post:", error);
+      });
+  } else {
+    console.error("User is not logged in. Cannot create post.");
+  }
+  
+};
+
+postForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const postContent = createPostInput.value;
+  createPost(postContent);
+});

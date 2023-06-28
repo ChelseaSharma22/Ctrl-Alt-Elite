@@ -372,4 +372,3 @@ function createPost(content) {
 };
 
 
-
