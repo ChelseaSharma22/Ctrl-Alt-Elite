@@ -116,5 +116,10 @@ body {
     top: 10px;
 }
 
-
+@media only screen and (max-width: 750px) {
+    body {
+        background-color: var(--purple);
+        background-image: none;
+    }
+}
 

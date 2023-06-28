@@ -27,7 +27,6 @@ html, body {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   border-radius: 5px 0 0 5px;
   font-family: inherit;
-  margin-top: 5px;
 }
 
 #registerform {
@@ -173,14 +172,14 @@ html, body {
     color: var(--yellow);
     }
 
-  #logo{
+  #logo, #logo1{
     height: 140px;
     width: 140px;
   }
  
 #head{
   display: flex;
-justify-content: center;
+  justify-content: center;
 }
     
 .card{
@@ -193,7 +192,6 @@ justify-content: center;
   border-radius: 0 5px 5px 0;
   font-family: inherit;
   text-align: center;
-  margin-top: 5px;
 }
 
 p{
@@ -218,4 +216,21 @@ main {
   margin-top: 100px;
   justify-content: center;
   align-content: center;
+}
+
+@media only screen and (max-width: 750px) {
+  body {
+    background-color: var(--purple);
+    background-image: none;
+  }
+  head {
+    display: block;
+  }
+  #logo1 {
+    display: none;
+  }
+  .card, .form {
+    border-radius: 5px;
+    margin-top: 10px;
+  }
 }
