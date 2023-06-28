@@ -11,11 +11,21 @@ const createPostInput = document.getElementById("createPost");
 const imghidden = document.getElementById("imghidden");
 const input = document.getElementById("addimg");
 
+//profile img array
+let profileImg = [
+  "profile1.png",
+  "profile2.png",
+  "profile3.png",
+  "profile4.png",
+  "profile5.png",
+  "profile6.png",
+  "profile7.png",
+  "profile8.png",
+]
 
-
-/* // emoji group
+// // emoji group
 let emojiGroup=[]
-// let emojisTag = document.getElementById("emojis").getElementsByTagName("img");
+let emojisTag = document.getElementById("emojis").getElementsByTagName("img");
 for(dom of emojisTag ){ //replace dom loop
   let _this=dom;
   dom.addEventListener("click",function(){
@@ -27,7 +37,7 @@ for(dom of emojisTag ){ //replace dom loop
   tempemj.src=dom.src
 
   emojiGroup.push(tempemj)
-} */
+ }
 
 // Check if the user is logged in
 const userLoggedIn = loggedIn();
@@ -89,14 +99,19 @@ if (userLoggedIn) {
             +(textImg!=undefined?`<br><img src="data:image${textImg}">`:"")
       }
 
-      /*   for(e of emojiGroup){//using for of to change the emoji text(id) back to emoji image
+        for(e of emojiGroup){//using for of to change the emoji text(id) back to emoji image
           let emj=e
         let eName=emj.emojiName
         contentHtml=contentHtml.replaceAll("%"+eName+"%",`<img width=25 height=25 src="${emj.src}" class="emoji ${emj.id}"/>`)
-      } */
+      }
       
       const postDiv = document.createElement("div");
       postDiv.className = "post";
+
+      const userProfile = document.createElement("div");
+      userProfile.className = "userProfile";
+      userProfile.innerHTML = `<img class="profileimg" src="img/profile-img/${profileImg[parseInt(Math.random()*profileImg.length)]}" alt="">
+                                <h5>${username}</h5>`
 
       const postContent = document.createElement("div");
       postContent.className = "post-content";
@@ -121,6 +136,7 @@ if (userLoggedIn) {
       deleteBtn.addEventListener("click", () => deleteUserPost(post));
       deleteBtn.textContent = "Delete";
 
+      postDiv.appendChild(userProfile);
       postDiv.appendChild(postContent);
       postDiv.appendChild(postDetails);
       postDiv.appendChild(likeBtn);
@@ -354,3 +370,5 @@ function createPost(content) {
   }
   
 };
+
+
