@@ -125,17 +125,23 @@ if (userLoggedIn) {
       const likeBtn = document.createElement("button");
       likeBtn.id = "like*"+_id;
       likeBtn.addEventListener("click", () => likePost(post));
-      likeBtn.textContent = "Like";
+      likeBtn.textContent = "";
+      likeBtn.classList.add("like-button");
+      
 
       const dislikeBtn = document.createElement("button");
       dislikeBtn.id ="dislike*"+ _id;
       dislikeBtn.addEventListener("click", () => dislikePost(post));
-      dislikeBtn.textContent = "Dislike";
+      dislikeBtn.textContent = "";
+      dislikeBtn.classList.add("dislike-button");
+      
 
       const deleteBtn = document.createElement("button");
       deleteBtn.id = "delete*"+ _id;
       deleteBtn.addEventListener("click", () => deleteUserPost(post));
-      deleteBtn.textContent = "Delete";
+      deleteBtn.textContent = "";
+      deleteBtn.classList.add("delete-button");
+      
 
       postDiv.appendChild(userProfile);
       postDiv.appendChild(postContent);

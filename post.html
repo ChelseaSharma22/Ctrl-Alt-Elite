@@ -18,13 +18,48 @@
 
   </head>
   <body>
-      <!------------------------------nav bar------------------------------------->
-      <nav>
-        <div class="container">
-          <h2 class="logo">Doughnut Diaries</h2>
-          
-          </div>
-          
+    <nav>
+      <div class="container">
+        <h2 class="logo">Doughnut Diaries</h2>
+        
+        </div>
+        
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <div class="container">
+        <div class="left">
+          <a class="profile">
+            <div class="profile-pic">
+              <img src="images/Doughnut logo.png" id="doughnut-logo-img" />
+            </div>
+            <div class="handle">
+              <h4></h4>
+              <p class="text-muted"></p>
+            </div>
+          </a>
+          <div class="sidebar">
+            <a class="menu-item active">
+              <span><i class="uil uil-home"></i></span> <h3>Home</h3>
+            </a>
+            
+            <a class="menu-item" id="notifications">
+              <span><i class="uil uil-bell"><small class="notification-count">9+</small></i></span> <h3>Notifications</h3>
+              
+            <a class="menu-item" id="messages-notifications">
+              <i class="uil uil-envelope"><small class="notification-count">6</small></i></span><h3>Messages</h3>
+            </a>
+            
+            
+           
+            <a class="menu-item" href="your-link-here">
+                <span><i class="uil uil-setting"></i></span>
+                <h3>Profile</h3>
+              </a>
+              <button id="logoutBtn">logout</button>
+              
           </div>
         </div>
       </nav>
@@ -47,42 +82,32 @@
                 <span><i class="uil uil-home"></i></span> <h3>Home</h3>
               </a>
               
-              <a class="menu-item" id="notifications">
-                <span><i class="uil uil-bell"><small class="notification-count">9+</small></i></span> <h3>Notifications</h3>
-                
-              <a class="menu-item" id="messages-notifications">
-                <i class="uil uil-envelope"><small class="notification-count">6</small></i></span><h3>Messages</h3>
-              </a>
-              
-              <a class="menu-item" href="your-link-here">
-                  <span><i class="uil uil-setting"></i></span>
-                  <h3>Profile</h3>
-              </a>
-              <button id="logoutBtn">logout</button>
-            </div>
-          </div>
-          
-          <!------------------------middle column of the content----------------------->
-          <div>
-            <div>
-              <button id="recent">recent</button>
-            </div>
-            <div>
-              <form id="postForm" >
-                <textarea id="createPost" placeholder="Write your post"></textarea>
-                  <div id="emojis" class="btn-group">
-                    <img src="./img/emoji/cry.png" id="cry" class="cry">
-                    <img src="./img/emoji/happy.png" id="happy" class="happy">
-                    <img src="./img/emoji/hearteye.png" id="hearteye" class="hearteye">
-                    <img src="./img/emoji/laughtear.png" id="laughtear" class="laughtear">
-                    <img src="./img/emoji/heart.png" id="heart" class="heart">
+              <div>
+                <div id="postFormContainer" class="card-footer bg-transparent">
+                <form id="postForm">
+                  <textarea id="createPost" placeholder="Write your post"></textarea>
+                  <div class="postmebebe" data-tooltip="Post it">
+                   
+                    <button type="submit">
+                      <img src="images/donutIcon.svg" alt="Create Post">
+                    </button>
+                    
                   </div>
-                  <div class="input imgdiv">
+                  <div id="emojisContainer" class="container">
+                  <div id="emojis" class="btn-group">
+                    <img src="/images/EmojiPost/cry.png" id="cry" class="cry">
+                    <img src="/images/EmojiPost/happy.png" id="happy" class="happy">
+                    <img src="/images/EmojiPost/hearteye.png" id="hearteye" class="hearteye">
+                    <img src="/images/EmojiPost/laughtear.png" id="laughtear" class="laughtear">
+                    <img src="/images/EmojiPost/hearteye.png" id="heart" class="heart">
                     <input type="file" id="addimg" accept="image/png, image/jpg">
                     <input id="imghidden" type="hidden">
+                    
                   </div>
-                  <button type="submit">Create Post</button>
-              </form>
+                </div>
+              </div>
+                </form>
+                <div id="posts"></div>
                 
             </div>
             <div id="posts"></div>
@@ -97,16 +122,69 @@
                 <span><i class="uil uil-edit"></i></span>
               </div>
 
-          
-              <div class="category">
-                <h6 class="active">Primary</h6>
-                <h6>General</h6>
-                <h6 class="message-requests">Requests(7)</h6>
+
+
+        <div class="right">
+          <div class="messages">
+            <div class="heading">
+              <h4>Messages</h4>
+              <span><i class="uil uil-edit"></i></span>
+            </div>
+
+        
+            <div class="category">
+              <h6 class="active">Primary</h6>
+              <h6>General</h6>
+              <h6 class="message-requests">Requests(7)</h6>
+            </div>
+            <div class="message">
+              <div class="profile-pic">
+                <img src="images/Cheldonut.png" id="cheldonut-img" />
+                <div class="active"></div>
               </div>
-              <div class="message">
+              <div class="message-body">
+                <h5>Chelsea Sharma</h5>
+                <p class="text-muted">Why did the donut go to the dentist? It needed a filling!</p>
+              </div>
+            </div>
+            
+            <div class="message">
+              <div class="profile-pic">
+                <img src="images/Aflakdonut.jpg" id="aflakdonut-img" />
+                <div class="active"></div>
+              </div>
+              <div class="message-body">
+                <h5>Aflak Chemali</h5>
+                <p class="text-bold">Ong glazed is the best</p>
+              </div>
+            </div>
+            
+            <div class="message">
+              <div class="profile-pic">
+                <img src="images/BryanOF.png" id="bryanof-img" />
+              </div>
+              <div class="message-body">
+                <h5>Bryan Herrera</h5>
+                <p class="text-muted">You got the dough and I'll bring the nut? </p>
+              </div>
+            </div>
+            
+            <div class="message">
+              <div class="profile-pic">
+                <img src="images/yuenmochi.png" id="yuenmochi-img" />
+              </div>
+              <div class="message-body">
+                <h5>Yuen Zhang</h5>
+                <p class="text-bold">No Cap Mochi donuts schmack frfr</p>
+              </div>
+            </div>
+            
+          <div class="friend-requests">
+            <h4>Requests</h4>
+            <div class="request">
+              <div class="info">
                 <div class="profile-pic">
-                  <img src="images/Cheldonut.png" />
-                  <div class="active"></div>
+                  <img src="images/MBjordan.png" id="mbjordan-img" />
                 </div>
                 <div class="message-body">
                   <h5>Chelsea Sharma</h5>
@@ -115,8 +193,7 @@
               </div>
               <div class="message">
                 <div class="profile-pic">
-                  <img src="images/Aflakdonut.jpg" />
-                  <div class="active"></div>
+                  <img src="images/Anniedonut.jpg" id="anniedonut-img" />
                 </div>
                 <div class="message-body">
                   <h5>Aflak Chemali</h5>
