@@ -16,16 +16,15 @@ body {
     font-family: inherit;
     position: absolute;
     left: 50%;
-    top: 53%;
+    top: 50%;
     transform: translate(-50%, -50%);
   }
 
 #weblogo {
     border-radius: 50%;
-    width: 150px;
-    margin-bottom: 5px;
+    width: 200px;
     display: block;
-    margin: 10px auto 10px auto;
+    margin: 0px auto 10px auto;
     cursor: pointer;
 }
 
