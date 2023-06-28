@@ -72,9 +72,6 @@ img {
   font-weight: 500;
 }
 
-.text-muted {
-  color: var(--color-gray)
-}
 
 nav {
   width: 100%;
@@ -316,7 +313,7 @@ main .container {
 }
 
 .right .friend-requests h4 {
-  color: var(--color-gray);
+  
   margin: 1rem 0;
 }
 
@@ -349,7 +346,7 @@ main .container {
 }
 
 
-.like-btn {
+button.like-button {
   background-color: #c76d97;
   color: white;
   padding: 8px 16px;
@@ -360,10 +357,11 @@ main .container {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 16px 16px;
+  transition: transform 0.2s ease;
 }
 
-.dislike-btn {
-  background-color: #f44336;
+button.dislike-button {
+  background-color: #FABC2A;
   color: white;
   padding: 8px 16px;
   border: none;
@@ -373,9 +371,10 @@ main .container {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 16px 16px;
+  transition: transform 0.2s ease;
 }
 
-.delete-btn {
+button.delete-button{
   background-color: #f1f1f1;
   color: #333;
   padding: 8px 16px;
@@ -386,7 +385,16 @@ main .container {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 16px 16px;
+  transition: transform 0.2s ease;
 }
+
+
+button.like-button:hover,
+button.dislike-button:hover,
+button.delete-button:hover {
+transform: scale(1.1);
+}
+
 
 
 #addimg {
@@ -405,13 +413,12 @@ main .container {
 #createPost {
   width: 100%;
   padding: 10px;
-  border: 1px solid #ccc;
   border-radius: 4px;
   resize: none;
   font-family: Arial, sans-serif;
   font-size: 14px;
   line-height: 1.5;
-  color: #333;
+  
   
 }
 
@@ -421,10 +428,6 @@ main .container {
 
 
 
-body {
-  background-image: url("");
-  background-size: cover;
-}
 
 .right {
   position: fixed;
@@ -457,20 +460,8 @@ body {
   background-color: #d3c053;
 }
 
-#createPost {
-  /* Set width and height */
-  width: 500px;
-  height: 100px;
 
-  /* Add some padding and border */
-  padding: 10px;
-  border: 1px solid #ccc;
 
-  /* Apply other desired styles */
-  font-family: Arial, sans-serif;
-  font-size: 14px;
-  color: #333;
-}
 
 #postForm {
   margin-bottom: 20px; /* Add some spacing between the form and the btn-group */
@@ -480,6 +471,9 @@ body {
 #emojis {
   display: flex;
   justify-content: space-between;
+  border: 1px solid #ccc;
+  height: 25px;
+  width: 25px;
 }
 
 #emojisContainer {
@@ -496,7 +490,31 @@ body {
   
 }
 
+.postmebebe {
+  display: flex;
+  justify-content: flex-end;
+}
 
 
 
+
+
+/*create post btn*/
+button img {
+  height: 35px;
+  background-color: #ffffff;
+  
+}
+
+
+
+
+/* makes emojis hover*/
+#emojis img {
+  transition: transform 0.2s ease;
+}
+
+#emojis img:hover {
+  transform: scale(1.1);
+}
 
