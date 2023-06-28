@@ -18,7 +18,7 @@
         crossorigin="anonymous"></script>
 
     <!-- Run BEFORE page is finished loading (before window.onload): -->
-     <!-- <script src="auth.js"></script>  -->
+    <!-- <script src="auth.js"></script>  -->
     <!-- <script>
      if (loggedIn() === false) window.location.replace("index.html");
     </script> -->
@@ -35,13 +35,13 @@
             </div>
             <div class="create">
                 <!-- <label class="btn btn-primary" for="create-post">New post</label> -->
-                
-                <button id="createprofilebtn" class="btn btn-primary rounded-5 fw-bold"
-                data-bs-toggle="modal" data-bs-target="#createprofile">
-                Edit Profile
-            </button>
+
+                <button id="createprofilebtn" class="btn btn-primary rounded-5 fw-bold" data-bs-toggle="modal"
+                    data-bs-target="#createprofile">
+                    Edit Profile
+                </button>
                 <div class="profile-pic">
-                    <img src="img/Doughnut_logo.png" alt="pic 1" />
+                    <img class="img" src="img/Doughnut_logo.png" alt="pic 1" />
                 </div>
             </div>
         </div>
@@ -52,12 +52,11 @@
             <div class="left">
                 <a class="profile">
                     <div class="profile-pic">
-                        <img src="img/Doughnut_logo.png">
+                        <img class="img" src="img/Doughnut_logo.png">
                     </div>
                     <div class="handle">
                         <h4 id="name">Username</h4>
-                        <p id="bio" class="text-muted">@dddd</p>
-                        <p id="fullName" class="text-muted">@dddd</p>
+                       
                     </div>
                 </a>
                 <div class="sidebar">
@@ -75,7 +74,7 @@
                         <div class="notifications-popup">
                             <div>
                                 <div class="profile-pic">
-                                    <img src="./images/profile-10.jpg">
+                                    <img class="img" src="./images/profile-10.jpg">
                                 </div>
                                 <div class="notification-body">
                                     <b>Abigail Willey</b> accepted your friend request
@@ -84,7 +83,7 @@
                             </div>
                             <div>
                                 <div class="profile-pic">
-                                    <img src="./images/profile-11.jpg">
+                                    <img class="img" src="./images/profile-11.jpg">
                                 </div>
                                 <div class="notification-body">
                                     <b>Varun Nair</b> commented on your post
@@ -93,7 +92,7 @@
                             </div>
                             <div>
                                 <div class="profile-pic">
-                                    <img src="./images/profile-12.jpg">
+                                    <img class="img" src="./images/profile-12.jpg">
                                 </div>
                                 <div class="notification-body">
                                     <b>Marry Opmong</b> and 210 other liked your post
@@ -102,7 +101,7 @@
                             </div>
                             <div>
                                 <div class="profile-pic">
-                                    <img src="./images/profile-13.jpg">
+                                    <img class="img" src="./images/profile-13.jpg">
                                 </div>
                                 <div class="notification-body">
                                     <b>Wilson Fisk</b> started following you
@@ -139,7 +138,7 @@
             <div class="middle">
                 <div id="editProfileModal" class="modal" tabindex="-1">
 
-                    <div class="vh-100">
+                    <div class="vh-100" id="editprofilecard">
                         <div class="container py-5 h-100 ">
                             <div id="s" class="card" style="border-radius: 10px;">
                                 <div class="card-body text-center">
@@ -161,7 +160,7 @@
                                             <div class="modal-body">
                                                 <form id="editProfileForm">
                                                     <div class="form-group">
-                                                        <input id="name" type="text" class="form-control"
+                                                        <input id="fullNameInput" type="text" class="form-control"
                                                             placeholder="Username">
                                                     </div>
                                                     <div class="form-group">
@@ -187,7 +186,7 @@
                                 <div class="d-flex justify-content-between text-center mt-5 mb-2">
                                     <div>
                                         <p class="mb-2 h5">8471</p>
-                                        <p id ="" class="text-muted mb-0">Posts</p>
+                                        <p id="" class="text-muted mb-0">Posts</p>
                                     </div>
                                     <div class="px-3">
                                         <p class="mb-2 h5">8512</p>
@@ -202,139 +201,134 @@
                         </div>
                     </div>
                 </div>
-                <div  class="container2" id="createprofile" class="modal" tabindex="-1">
+                <div class="container2" id="createprofile" class="modal" tabindex="-1">
                     <div class="wrapper">
-                      <section class="post">
-                        <header>Create Post</header>
-                        <form id="postForm" class = "postForm"action="">
-                          <div class="content">
-                            <img src="img/donut.jpg" alt="logo">
-                            <div class="details">
-                              <p>doughnut</p>
-                              <div class="privacy">
-                                <i class="fas fa-user-friends"></i>
-                                <span>Friends</span>
-                                <i class="fas fa-caret-down"></i>
-                              </div>
+                        <section class="post">
+                            <header>Create Post</header>
+                            <form id="postForm" class="postForm"action ="">
+                                <div class="content">
+                                    <img src="img/donut.jpg" alt="logo">
+                                    <div class="details">
+                                        <p>doughnut</p>
+                                        <div class="privacy">
+                                            <i class="fas fa-user-friends"></i>
+                                            <span>Friends</span>
+                                            <i class="fas fa-caret-down"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <textarea id="createPost" placeholder="What's on your mind?" spellcheck="false"
+                                    required></textarea>
+                                <div class="theme-emoji">
+                                    <img src="./img/theme.svg" alt="theme">
+                                    <img src="./img/smile.svg" alt="smile">
+                                </div>
+                                <div class="options">
+                                    <p>Add to Your Post</p>
+                                    <ul class="list">
+                                        <li><img src="img/gallery.svg" alt="gallery"></li>
+                                        <li><img src="img/tag.svg" alt="gallery"></li>
+                                        <li><img src="img/emoji.svg" alt="gallery"></li>
+                                        <li><img src="img/mic.svg" alt="gallery"></li>
+                                        <li><img src="img/more.svg" alt="gallery"></li>
+                                    </ul>
+                                </div>
+                                <button  type="submit" id="profilePost">Post</button>
+                            </form>
+                        </section>
+                        <section class="audience">
+                            <header>
+                                <div class="arrow-back"><i class="fas fa-arrow-left"></i></div>
+                                <p>Select Audience</p>
+                            </header>
+                            <div class="content">
+                                <p>Who can see your post?</p>
+                                <span>Your post will show up in News Feed, on your profile and in search results.</span>
                             </div>
-                          </div>
-                          <textarea  id = "createPost" placeholder="What's on your mind?" spellcheck="false" required></textarea>
-                          <div class="theme-emoji">
-                            <img1 src="./img/theme.svg" alt="theme">
-                            <img src="icons/smile.svg" alt="smile">
-                          </div>
-                          <div class="options">
-                            <p>Add to Your Post</p>
                             <ul class="list">
-                              <li><img src="icons/gallery.svg" alt="gallery"></li>
-                              <li><img src="icons/tag.svg" alt="gallery"></li>
-                              <li><img src="icons/emoji.svg" alt="gallery"></li>
-                              <li><img src="icons/mic.svg" alt="gallery"></li>
-                              <li><img src="icons/more.svg" alt="gallery"></li>
+                                <li>
+                                    <div class="column">
+                                        <div class="icon"><i class="fas fa-globe-asia"></i></div>
+                                        <div class="details">
+                                            <p>Public</p>
+                                            <span>Anyone on or off Facebook</span>
+                                        </div>
+                                    </div>
+                                    <div class="radio"></div>
+                                </li>
+                                <li class="active">
+                                    <div class="column">
+                                        <div class="icon"><i class="fas fa-user-friends"></i></div>
+                                        <div class="details">
+                                            <p>Friends</p>
+                                            <span>Your friends on Facebook</span>
+                                        </div>
+                                    </div>
+                                    <div class="radio"></div>
+                                </li>
+                                <li>
+                                    <div class="column">
+                                        <div class="icon"><i class="fas fa-user"></i></div>
+                                        <div class="details">
+                                            <p>Specific</p>
+                                            <span>Only show to some friends</span>
+                                        </div>
+                                    </div>
+                                    <div class="radio"></div>
+                                </li>
+                                <li>
+                                    <div class="column">
+                                        <div class="icon"><i class="fas fa-lock"></i></div>
+                                        <div class="details">
+                                            <p>Only me</p>
+                                            <span>Only you can see your post</span>
+                                        </div>
+                                    </div>
+                                    <div class="radio"></div>
+                                </li>
+                                <li>
+                                    <div class="column">
+                                        <div class="icon"><i class="fas fa-cog"></i></div>
+                                        <div class="details">
+                                            <p>Custom</p>
+                                            <span>Include and exclude friends</span>
+                                        </div>
+                                    </div>
+                                    <div class="radio"></div>
+                                </li>
                             </ul>
-                          </div>
-                          <button  type="submit" id = "profilePost">Post</button>
-                        </form>
-                      </section>
-                      <section class="audience">
-                        <header>
-                          <div class="arrow-back"><i class="fas fa-arrow-left"></i></div>
-                          <p>Select Audience</p>
-                        </header>
-                        <div class="content">
-                          <p>Who can see your post?</p>
-                          <span>Your post will show up in News Feed, on your profile and in search results.</span>
-                        </div>
-                        <ul class="list">
-                          <li>
-                            <div class="column">
-                              <div class="icon"><i class="fas fa-globe-asia"></i></div>
-                              <div class="details">
-                                <p>Public</p>
-                                <span>Anyone on or off Facebook</span>
-                              </div>
-                            </div>
-                            <div class="radio"></div>
-                          </li>
-                          <li class="active">
-                            <div class="column">
-                              <div class="icon"><i class="fas fa-user-friends"></i></div>
-                              <div class="details">
-                                <p>Friends</p>
-                                <span>Your friends on Facebook</span>
-                              </div>
-                            </div>
-                            <div class="radio"></div>
-                          </li>
-                          <li>
-                            <div class="column">
-                              <div class="icon"><i class="fas fa-user"></i></div>
-                              <div class="details">
-                                <p>Specific</p>
-                                <span>Only show to some friends</span>
-                              </div>
-                            </div>
-                            <div class="radio"></div>
-                          </li>
-                          <li>
-                            <div class="column">
-                              <div class="icon"><i class="fas fa-lock"></i></div>
-                              <div class="details">
-                                <p>Only me</p>
-                                <span>Only you can see your post</span>
-                              </div>
-                            </div>
-                            <div class="radio"></div>
-                          </li>
-                          <li>
-                            <div class="column">
-                              <div class="icon"><i class="fas fa-cog"></i></div>
-                              <div class="details">
-                                <p>Custom</p>
-                                <span>Include and exclude friends</span>
-                              </div>
-                            </div>
-                            <div class="radio"></div>
-                          </li>
-                        </ul>
-                      </section>
+                        </section>
                     </div>
-                  </div>
+                </div>
 
 
 
                 <div class="profile-card">
                     <div class="profile-img">
-                        <img src="https://i.postimg.cc/SsJxGpJM/profile4.jpg" alt="Team Image" />
+                        <img src="img/my a.webp" alt="Team Image" />
                     </div>
                     <div class="profile-content">
-                        <h2 class="title">Amaira
+                        <h2 class="title">
+                            <p id="fullName" class="text-muted">@dddd</p>
+                        <p id="bio" class="text-muted">@dddd</p>
+
+
                             <span>Designer & Developer</span>
                             <!--<button   class="btn btn-primary" for="create-post" id="editPro" >Edit profile</button>-->
+                            <div>
 
-                            <button id="editProfileButton" class="btn btn-primary rounded-5 fw-bold"
-                                data-bs-toggle="modal" data-bs-target="#editProfileModal">
-                                Edit Profile
-                            </button>
-
+                                <button id="editProfileButton" class="btn btn-primary rounded-5 fw-bold"
+                                    data-bs-toggle="modal" data-bs-target="#editProfileModal">
+                                    Edit Profile
+                                </button>
+                            </div>
 
                         </h2>
 
                     </div>
 
                 </div>
-                <div>
 
-
-
-
-
-
-
-
-
-
-                </div>
 
 
 
@@ -367,7 +361,7 @@
                     </div>
                     <div class="message">
                         <div class="profile-pic">
-                            <img src="images/profile-17.jpg">
+                            <img class="img" src="images/profile-17.jpg">
                             <div class="active"></div>
                         </div>
                         <div class="message-body">
@@ -377,7 +371,7 @@
                     </div>
                     <div class="message">
                         <div class="profile-pic">
-                            <img src="images/profile-18.jpg">
+                            <img class="img" src="images/profile-18.jpg">
                             <div class="active"></div>
                         </div>
                         <div class="message-body">
@@ -387,7 +381,7 @@
                     </div>
                     <div class="message">
                         <div class="profile-pic">
-                            <img src="images/profile-15.jpg">
+                            <img class="img" src="images/profile-15.jpg">
                         </div>
                         <div class="message-body">
                             <h5>Chris Brown</h5>
@@ -396,7 +390,7 @@
                     </div>
                     <div class="message">
                         <div class="profile-pic">
-                            <img src="images/profile-14.jpg">
+                            <img class="img" src="images/profile-14.jpg">
                         </div>
                         <div class="message-body">
                             <h5>Lana Rose</h5>
@@ -405,7 +399,7 @@
                     </div>
                     <div class="message">
                         <div class="profile-pic">
-                            <img src="images/profile-11.jpg">
+                            <img class="img" src="images/profile-11.jpg">
                         </div>
                         <div class="message-body">
                             <h5>Varun Nair</h5>
@@ -414,7 +408,7 @@
                     </div>
                     <div class="message">
                         <div class="profile-pic">
-                            <img src="images/profile-1.jpg">
+                            <img class="img" src="images/profile-1.jpg">
                             <div class="active"></div>
                         </div>
                         <div class="message-body">
@@ -428,7 +422,7 @@
                     <div class="request">
                         <div class="info">
                             <div class="profile-pic">
-                                <img src="images/profile-13.jpg">
+                                <img class="img" src="images/profile-13.jpg">
                             </div>
                             <div>
                                 <h5>Wilson Fisk</h5>
@@ -444,7 +438,7 @@
                     <div class="request">
                         <div class="info">
                             <div class="profile-pic">
-                                <img src="images/profile-20.jpg">
+                                <img class="img" src="images/profile-20.jpg">
                             </div>
                             <div>
                                 <h5>Srishti Tirkey</h5>
@@ -457,22 +451,7 @@
                             <button class="btn">Decline</button>
                         </div>
                     </div>
-                    <div class="request">
-                        <div class="info">
-                            <div class="profile-pic">
-                                <img src="images/profile-5.jpg">
-                            </div>
-                            <div>
-                                <h5>Christ Kahea</h5>
-                                <p class="text-muted">1 mutual friend</p>
-
-                            </div>
-                        </div>
-                        <div class="action">
-                            <button class="btn btn-primary">Accept</button>
-                            <button class="btn">Decline</button>
-                        </div>
-                    </div>
+                    
 
                 </div>
 
@@ -494,7 +473,7 @@
     <!-- Page-specific code -->
     <script src="js/profile.js"></script>
 
-  
+
 
 
 

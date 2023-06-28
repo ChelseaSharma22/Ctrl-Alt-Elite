@@ -35,10 +35,16 @@
         color: var(--color-dark) !important;
         background: var(--color-light) !important;
         overflow-x: hidden !important;
+        background-image: url('img/1.png') !important;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        height: 100vh !important;
+
+
     }
     
     .container {
-        width: 80% ;
+        width: 100% ;
         margin: 0 auto ;
       }
     
@@ -49,7 +55,7 @@
         overflow: hidden;
     }
     
-    img {
+    .img {
         display: block !important;
         width: 100% !important;
       }
@@ -61,6 +67,7 @@
         border-radius: var(--border-radius);
         cursor: pointer;
         transition: all 300ms ease;
+       
     }
     
     .btn:hover{
@@ -147,7 +154,8 @@
     
     .left .sidebar{
         margin-top: 1 rem;
-        background: var(--color-white);
+        background-color: #f2edeb
+         !important;
         border-radius: var(--card-border-radius);
     }
     
@@ -267,7 +275,7 @@
     }
     
     .right .messages{
-        background: var(--color-white);
+        background: #f2edeb;
         border-radius: var(--card-border-radius);
         padding: var(--card-padding);
         
@@ -358,7 +366,7 @@
     }
     
     .right .request{
-        background: var(--color-white);
+        background: #f2edeb;
         padding: var(--card-padding);
         border-radius: var(--card-border-radius);
         margin-bottom: 0.7rem;
@@ -436,22 +444,27 @@
         }
     }
 
-    body{
-        background:rgb(255, 244, 244);
-    }
+   
     .profile-card{
                 position:relative;
                 overflow: hidden;
-                margin-bottom:10px;
-                box-shadow:0px 2px 3px #222;
-                top:150px;
+                margin-bottom:10px !important;
+                box-shadow:0px 2px 3px #FABC2A !important;
+                top:150px !important;
+                border-radius: 5%;
+                background-color:#f2edeb ;
+                
+                  
+                  height: 500px;
+            
+
             }
             .profile-card:hover .profile-img img
             {
                 transform: scale(1.2);
             }
             .profile-card .profile-img img{
-                width:90% !important;
+                width:100% !important;
                 height:auto;
                 transition: transform 1s;
             }
@@ -486,7 +499,7 @@
                 left:20px;
             }
             .profile-card:hover .profile-content:after{
-                bottom:20px;
+                bottom: 50px !important;;
                 right:20px;
             }
            
@@ -496,7 +509,7 @@
                 left:0;
                 width:100%;
                 height:100%;
-                padding:50% 4%;
+                padding:63% 4% !important;
                 text-align: center;
                
             }
@@ -560,10 +573,10 @@
                 background: #1a81ff;
               }
               .container2{
-                width: 500px;
-                height: 480px;
+                width: 500px !important;
+                height: 480px!important;
                 overflow: hidden;
-                background: #fff;
+                background: #f2edeb;
                 border-radius: 10px;
                 transition: height 0.2s ease;
                 box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
@@ -816,3 +829,31 @@
               .list li.active .radio::before{
                 background: #4599FF;
               }
+              .btn {
+                background-color: #FABC2A !important;
+                color: white; /* Optionally, change the text color to white for better contrast */
+                /* Add other styles as needed */
+              }
+            #editprofilecard{
+              background: linear-gradient(  to top , #FABC2A, transparent);
+           }
+           #s{
+            background-color: #FABC2A;
+           }
+           .modal-content{
+            background-color: #FABC2A !important;           }
+            #editSaveBtn{
+              background-color: #f05365 !important;           }
+              .form-control{
+                background-color: #bd93bd !important;
+              }
+              .form-group {
+                margin-bottom: 12px !important; /* Adjust the value to increase or decrease the space */
+            }
+
+          
+
+
+          
+
+              
