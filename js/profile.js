@@ -45,7 +45,8 @@ const filterByMostLikes = (posts) => {
 
 //my code
 const loginData = loggedIn();
-const currentUser = loginData.username;
+console.log(loginData);
+const currentUser = loginData.username.substr(0,loginData.username.length-5);
 const userFullName = document.getElementById("fullName");
 const userCreationDate = document.getElementById("createdAt");
 const signoutBtn = document.getElementById("signoutBtn");

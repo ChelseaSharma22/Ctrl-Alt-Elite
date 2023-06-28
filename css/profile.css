@@ -35,7 +35,7 @@
         color: var(--color-dark) !important;
         background: var(--color-light) !important;
         overflow-x: hidden !important;
-        background-image: url('img/1.png') !important;
+        background-image: url(../img/profilebg.png) !important;
         background-repeat: no-repeat !important;
         background-size: cover !important;
         height: 100vh !important;

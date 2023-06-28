@@ -73,6 +73,7 @@ if (userLoggedIn) {
     //filter the post only for our website
     let posts=allPosts.filter(post=>{
       if((new RegExp(/.*donut/)).test(post.username)){
+        console.log(post);
         post.username=post.username.substr(0,post.username.length-5);
         //console.log(post.username)
         return post
@@ -110,7 +111,7 @@ if (userLoggedIn) {
 
       const userProfile = document.createElement("div");
       userProfile.className = "userProfile";
-      userProfile.innerHTML = `<img class="profileimg" src="img/profile-img/${profileImg[parseInt(Math.random()*profileImg.length)]}" alt="">
+      userProfile.innerHTML = `<img class="profileimg" src="img/profile-img/${profileImg[parseInt(Math.random()*profileImg.length)]}">
                                 <h5>${username}</h5>`
 
       const postContent = document.createElement("div");
@@ -147,12 +148,9 @@ if (userLoggedIn) {
 
     });
   };
-
-
 } else {
   window.location.assign("./login.html");//send back to the login page
 }
-  
 
 //for adding image to the post
 if (typeof FileReader === "undefined") { //check able to use the fileReader
@@ -181,7 +179,6 @@ if (typeof FileReader === "undefined") { //check able to use the fileReader
     }, false);//if able to use, run the readFile function
     
   }
-
 
 // Helper function to check if the user is logged in
 function loggedIn() {
