@@ -26,9 +26,10 @@
 </head>
 
 <body>
+    <!----------------------------------------------navbar------------------------------------------------>
     <nav>
         <div class="container">
-            <h2 class="logo">DOUGHNUT</h2>
+            <h2 class="logo">DOUGHNUT DIARIES</h2>
             <div class="search-bar">
                 <i class="uil uil-search"></i>
                 <input type="search" placeholder="Search for creators, inspirations and projects" />
@@ -41,7 +42,7 @@
                     Edit Profile
                 </button>
                 <div class="profile-pic">
-                    <img class="img" src="img/Doughnut_logo.png" alt="pic 1" />
+                    <img class="img" src="./img/Doughnut_logo-removebg-preview.png" alt="pic 1" />
                 </div>
             </div>
         </div>
@@ -49,13 +50,14 @@
 
     <main>
         <div class="container">
+            <!----------------------------------------left column------------------------------------------------------>
             <div class="left">
                 <a class="profile">
                     <div class="profile-pic">
-                        <img class="img" src="img/Doughnut_logo.png">
+                        <img class="img" src="./img/Doughnut_logo-removebg-preview.png">
                     </div>
                     <div class="handle">
-                        <h4 id="name">Username</h4>
+                        <h4 id="username">Username</h4>
                        
                     </div>
                 </a>
@@ -135,6 +137,7 @@
                 </div>
             </div>
 
+            <!----------------------------------------middle column------------------------------------------------------>
             <div class="middle">
                 <div id="editProfileModal" class="modal" tabindex="-1">
 
@@ -147,7 +150,7 @@
                                             class="rounded-circle img-fluid" style="width: 100px;" />
                                     </div>
                                     <h4 id="ProfileName" class="mb-2">hi</h4>
-                                    <p class="text-muted mb-4">@Programmer <span class="mx-2">|</span> <a
+                                    <p class="text-muted mb-4">@DonutLover <span class="mx-2">|</span> <a
                                             href="#!">mdbootstrap.com</a></p>
 
                                     <div class="modal-dialog">
@@ -205,16 +208,11 @@
                     <div class="wrapper">
                         <section class="post">
                             <header>Create Post</header>
-                            <form id="postForm" class="postForm"action ="">
+                            <form id="postForm" class="postForm" action ="">
                                 <div class="content">
                                     <img src="img/my a.webp" alt="logo">
                                     <div class="details">
-                                        <p>doughnut</p>
-                                        <div class="privacy">
-                                            <i class="fas fa-user-friends"></i>
-                                            <span>Friends</span>
-                                            <i class="fas fa-caret-down"></i>
-                                        </div>
+                                        <p id="username1">Username</p>
                                     </div>
                                 </div>
                                 <textarea id="createPost" placeholder="What's on your mind?" spellcheck="false"
@@ -336,12 +334,7 @@
 
             </div>
 
-
-
-
-
-
-
+            <!----------------------------------------right column------------------------------------------------------>
             <div class="right">
                 <div class="messages">
                     <div class="heading">

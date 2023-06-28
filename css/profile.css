@@ -18,9 +18,17 @@
     --color-black: hsl(252, 30%, 10%) !important;
     --sticky-top-left: 5.4rem !important;
     --sticky-top-right: -18rem !important;
+    --violet: #925E78;
+    --purple: #BD93BD;
+    --white: #F2EDEB;
+    --pink: #F05365;
+    --yellow: #FABC2A; 
     }
     
-    
+    @font-face {
+      font-family:ballonFont;
+      src: url(Balloons-YYVy.ttf);
+    } 
     *,*::before,*::after {
         margin: 0 ;
         padding: 0 ;
@@ -30,6 +38,11 @@
         border: 0 !important;
     }
     
+    .logo {
+      font-family: ballonFont;
+      color: var(--yellow);
+    }
+
     body{
         font-family: 'Poppins', sans-serif !important;
         color: var(--color-dark) !important;
@@ -37,7 +50,8 @@
         overflow-x: hidden !important;
         background-image: url(../img/profilebg.png) !important;
         background-repeat: no-repeat !important;
-        background-size: cover !important;
+        background-size: 100% 100% !important;
+        background-attachment: fixed !important;
         height: 100vh !important;
 
 
