@@ -11,7 +11,11 @@
   --color-success: hsl(120, 95%, 60%);
   --color-danger: hsl(0, 95%, 65%);
   --color-black: hsl(252, 30%, 10%);
-
+  --purplrdark: #925E78;
+  --purplelight: #BD93BD;
+  --pale: #F2EDEB;
+  --pink: #F05365;
+  --yellow: #FABC2A;
 }
 
 
@@ -344,8 +348,9 @@ main .container {
   gap: 1rem;
 }
 
-
-
+.post {
+  margin: 10px 0px;
+}
 
 .post-content {
   background-color: #ffffff;
@@ -354,6 +359,17 @@ main .container {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.userProfile {
+  display: flex;
+  align-items: end;
+}
+
+.profileimg {
+  border-radius: 50%;
+  border: solid var(--yellow);
+  height: 75px;
+  width: 75px;
+}
 
 .like-btn {
   background-color: #c76d97;

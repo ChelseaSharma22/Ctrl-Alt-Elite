@@ -11,7 +11,17 @@ const createPostInput = document.getElementById("createPost");
 const imghidden = document.getElementById("imghidden");
 const input = document.getElementById("addimg");
 
-
+//profile img array
+let profileImg = [
+  "profile1.png",
+  "profile2.png",
+  "profile3.png",
+  "profile4.png",
+  "profile5.png",
+  "profile6.png",
+  "profile7.png",
+  "profile8.png",
+]
 
 // emoji group
 let emojiGroup=[]
@@ -98,6 +108,11 @@ if (userLoggedIn) {
       const postDiv = document.createElement("div");
       postDiv.className = "post";
 
+      const userProfile = document.createElement("div");
+      userProfile.className = "userProfile";
+      userProfile.innerHTML = `<img class="profileimg" src="img/profile-img/${profileImg[parseInt(Math.random()*profileImg.length)]}" alt="">
+                                <h5>${username}</h5>`
+
       const postContent = document.createElement("div");
       postContent.className = "post-content";
       postContent.innerHTML = contentHtml;
@@ -121,6 +136,7 @@ if (userLoggedIn) {
       deleteBtn.addEventListener("click", () => deleteUserPost(post));
       deleteBtn.textContent = "Delete";
 
+      postDiv.appendChild(userProfile);
       postDiv.appendChild(postContent);
       postDiv.appendChild(postDetails);
       postDiv.appendChild(likeBtn);
