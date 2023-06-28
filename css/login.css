@@ -7,14 +7,53 @@
     --yellow: #FABC2A; 
 }
 
+/*font*/
 @font-face {
   font-family:ballonFont;
   src: url(Balloons-YYVy.ttf);
 }
 
+/*default*/
 html, body {
   height: 100%;
   width: 100%;
+}
+
+body{
+  background-image: url(../img/background2.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+ }
+
+/**********************************************header part***************************************************/
+h1{
+   text-align: center;
+   font-family:ballonFont;
+   font-size: 50px;
+   color: var(--yellow);
+   }
+
+#logo {
+  cursor: pointer;
+}
+
+#logo, #logo1{
+   height: 140px;
+   width: 140px;
+ }
+
+#head{
+ display: flex;
+ justify-content: center;
+}
+   
+/*******************************************form part******************************************************/
+#row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 100px;
+  justify-content: center;
+  align-content: center;
 }
 
 .form {
@@ -159,29 +198,7 @@ html, body {
   }
 }
  
-  body{
-   background-image: url("images/2.png");
-   background-size: 100% 100%;
-   background-repeat: no-repeat;
-  }
-
-  h1{
-    text-align: center;
-    font-family:ballonFont;
-    font-size: 50px;
-    color: var(--yellow);
-    }
-
-  #logo, #logo1{
-    height: 140px;
-    width: 140px;
-  }
- 
-#head{
-  display: flex;
-  justify-content: center;
-}
-    
+/***********************************************card part*******************************************************/
 .card{
   width: 300px;
   background-color:#EE9BAA;
@@ -203,14 +220,7 @@ h5{
   
 }
 
-#row {
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 100px;
-  justify-content: center;
-  align-content: center;
-}
-
+/******************************************For sign up page*********************************************************/
 main {
   display: flex;
   margin-top: 100px;
@@ -218,6 +228,7 @@ main {
   align-content: center;
 }
 
+/***********************************************small screen setting**********************************************/
 @media only screen and (max-width: 750px) {
   body {
     background-color: var(--purple);

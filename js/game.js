@@ -1,10 +1,15 @@
 "use strict"
 const $ = document.querySelectorAll.bind(document);
-
+//default setting
 let isStart=false;
 let isFirsttime=true;
 control();
 
+//screen size detect
+let screenSize = window.matchMedia("(max-width: 750px)");
+const smallScreenDiv = $("#smallScreen")[0];
+detectScreen(screenSize);
+screenSize.addEventListener("change", detectScreen);
 
 //get the character info
 let character = $("#character")[0];
@@ -35,12 +40,10 @@ startbtn.addEventListener("click", e=>{
     startbtnDiv.classList.add("d-none")
     getBlock();
     showScore();
-
-
 })
 
+//jump function
 function jump(isFirst) {
-    //console.log("1")
     if(isJumping) return;
     showScore()
     upTime = setInterval(() => {
@@ -61,13 +64,13 @@ function jump(isFirst) {
     }, 20)
 }
 
+// show the score function
 function showScore() {
     gameScore.innerText = score;
     score++
 }
- 
 
-
+//geting the block run
 function getBlock() {
     let blocks = $(".blocks")[0];
     let block = document.createElement("div");
@@ -81,9 +84,6 @@ if(isStart){
     let blockBottm = 30;
     let blockWidth = 40;
     let blockHeight = 36;
-
-
-
 
     function moveBlock() {
         blockRight += 5;
@@ -105,35 +105,22 @@ if(isStart){
                 
                 clearInterval(blockInterval);
                 clearTimeout(blockTimeout)
-                //location.reload()
-               // resetGame(score);
             }
 
     }
-
-    
-
-    
     let blockInterval = setInterval(_=>{
-        //$("#")
         moveBlock();
     }, 20);
     let blockTimeout = setTimeout(getBlock, randomTimeout);
 
 }
 
-
-
-
+//game control function
 function control() {
-    
     window.addEventListener("keypress", e=>{
-        // console.log(e.keycode==38)
         if(isStart){
             // if(e.key="")
             if (e.key == "ArrowUp" || e.key == " "){
-                // console.log(new Date())
-                //e.preventDefault();
                 jump()
             }
         }
@@ -142,4 +129,11 @@ function control() {
          if(isStart && !isFirsttime) jump(isFirsttime)
          isFirsttime=false;
      })
+}
+
+//function for small screen size
+function detectScreen(size) {
+    if(size.match) {
+        smallScreenDiv.innerHTML = `<h4>Sorry, the small screen version coming soon!</h4>`;
+    }
 }

@@ -6,14 +6,29 @@
     --pink: #F05365;
     --yellow: #FABC2A; 
 }
+/*default*/
 html, body {
     height: 100%;
 }
-
+/*font*/
 @font-face {
     font-family:ballonFont;
     src: url(Balloons-YYVy.ttf);
   }  
+
+body {
+    background-image: url(../img/background1.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+#weblogo {
+    border-radius: 50%;
+    width: 200px;
+    display: block;
+    margin: 0px auto 10px auto;
+    cursor: pointer;
+}
 
 h6, h3 {
     font-family: ballonFont;
@@ -23,12 +38,6 @@ h6, h3 {
 h3 {
     text-align: center;
     color: var(--violet);
-}
-
-body {
-    background-image: url(img/background1.png);
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
 }
 
 #intro {
@@ -44,14 +53,7 @@ body {
     transform: translate(-50%, -50%);
   }
 
-#weblogo {
-    border-radius: 50%;
-    width: 200px;
-    display: block;
-    margin: 0px auto 10px auto;
-    cursor: pointer;
-}
-
+/****************************************game content************************************************/
 #gamediv {
     width: 500px;
     height: 400px;
@@ -63,7 +65,7 @@ body {
 #character {
     width: 50px;
     height: 50px;
-    background-image: url(./img/donut1.png);
+    background-image: url(../img/game/donut1.png);
     background-repeat: no-repeat;
     position: absolute;
     bottom: 30px;
@@ -73,7 +75,7 @@ body {
 #ground {
     width: 100%;
     height: 30px;
-    background-image: url(img/ground1.jpg);
+    background-image: url(../img/game/ground1.jpg);
     position: absolute;
     bottom: 0;
 }
@@ -81,19 +83,18 @@ body {
 .block {
     width: 40px;
     height: 36px;
-    
     position: absolute;
     bottom: 30px;
     right: 0;
 }
 .block1{
-    background: url(img/rock1.png);
+    background: url(../img/game/rock1.png);
 }
 .block2{
-    background: url(img/rock2.png);
+    background: url(../img/game/rock2.png);
 }
 .block3{
-    background: url(img/rock3.png);
+    background: url(../img/game/rock3.png);
 }
 
 #gameOver {
@@ -116,10 +117,15 @@ body {
     top: 10px;
 }
 
+/************************************small screen setting********************************************/
 @media only screen and (max-width: 750px) {
     body {
         background-color: var(--purple);
         background-image: none;
     }
+    #gamediv {
+        display: none;
+    }
+
 }
 

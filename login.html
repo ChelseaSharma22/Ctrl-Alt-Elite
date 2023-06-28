@@ -13,16 +13,16 @@
   crossorigin="anonymous"></script>
 
   <!--CSS Style Sheet-->
-  <link rel="stylesheet" href="login.css"/>
+  <link rel="stylesheet" href="css/login.css"/>
   <title>Login</title>
 
 </head>
 
 <body class="container">
   <div id="head">
-    <img id="logo" src="images/Doughnut_logo-removebg-preview.png" class="button" onclick="location.href='tempgame.html'">
+    <img id="logo" src="img/Doughnut_logo-removebg-preview.png" class="button" onclick="location.href='tempgame.html'">
     <h1>Welcome to the Doughnut Diaries!</h1>
-    <img id="logo1" src="images/Doughnut_logo-removebg-preview.png" alt="">
+    <img id="logo1" src="img/Doughnut_logo-removebg-preview.png" alt="">
   </div> 
 
    <!-- <div id="loader_cont">
@@ -32,8 +32,8 @@
   <div id="row">
     <div class="maincontent">
       <form class="form" id="loginForm">
-        <input id="username" placeholder="Username" class="input" type="text" />
-        <input placeholder="Password" class="input" type="password" id="password" />
+        <input id="username" placeholder="Username" class="input" type="text" required />
+        <input placeholder="Password" class="input" type="password" id="password" required />
         <button id="loginBtn">Login</button>
         <a id="forgotPassword" href="#">Forgotten password?</a>
         <button class="create" id="createAccountBtn" onclick="location.href='register.html'">Create new account</button>
@@ -57,6 +57,6 @@
 
 
 
-  <script src="login.js"></script>
+  <script src="js/login.js"></script>
 </body>
 </html>
