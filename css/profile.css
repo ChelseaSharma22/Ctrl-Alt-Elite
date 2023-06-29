@@ -168,8 +168,7 @@
     
     .left .sidebar{
         margin-top: 1 rem;
-        background-color: #f2edeb
-         !important;
+        background-color: #f2edeb!important;
         border-radius: var(--card-border-radius);
     }
     

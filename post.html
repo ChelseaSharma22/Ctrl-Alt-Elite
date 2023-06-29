@@ -1,263 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width= , initial-scale=1.0" />
-    <title>Doughnut Diaries</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="css/post.css" />
-      <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-    crossorigin="anonymous"></script>
 
-  </head>
-  <body>
-    <nav>
-      <div class="container">
-        <h2 class="logo">Doughnut Diaries</h2>
-        
-        </div>
-        
-        </div>
-      </div>
-    </nav>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Profile</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.6/css/unicons.css" />
+        <!--icon-->
+        <link rel="icon" type="image/x-icon" href="img/doughnut.ico">
+        <!--css-->
+        <link rel="stylesheet" href="./css/post.css" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+            crossorigin="anonymous"></script>
 
-    <main>
-      <div class="container">
-        <div class="left">
-          <a class="profile">
-            <div class="profile-pic">
-              <img src="images/Doughnut logo.png" id="doughnut-logo-img" />
-            </div>
-            <div class="handle">
-              <h4></h4>
-              <p class="text-muted"></p>
-            </div>
-          </a>
-          <div class="sidebar">
-            <a class="menu-item active">
-              <span><i class="uil uil-home"></i></span> <h3>Home</h3>
-            </a>
-            
-            <a class="menu-item" id="notifications">
-              <span><i class="uil uil-bell"><small class="notification-count">9+</small></i></span> <h3>Notifications</h3>
-              
-            <a class="menu-item" id="messages-notifications">
-              <i class="uil uil-envelope"><small class="notification-count">6</small></i></span><h3>Messages</h3>
-            </a>
-            
-            
-           
-            <a class="menu-item" href="your-link-here">
-                <span><i class="uil uil-setting"></i></span>
-                <h3>Profile</h3>
-              </a>
-              <button id="logoutBtn">logout</button>
-              
-          </div>
-        </div>
-      </nav>
+    </head>
 
-      <main>
-        <div class="container">
-          <!---------------------left column of the content--------------------------->
-          <div class="left">
-            <a class="profile">
-              <div class="profile-pic">
-                <img src="images/Doughnut logo.png" />
-              </div>
-              <div class="handle">
-                <h4>Chirag</h4>
-                <p class="text-muted">@chirag</p>
-              </div>
-            </a>
-            <div class="sidebar">
-              <a class="menu-item active">
-                <span><i class="uil uil-home"></i></span> <h3>Home</h3>
-              </a>
-              
-              <div>
-                <div id="postFormContainer" class="card-footer bg-transparent">
-                <form id="postForm">
-                  <textarea id="createPost" placeholder="Write your post"></textarea>
-                  <div class="postmebebe" data-tooltip="Post it">
-                   
-                    <button type="submit">
-                      <img src="images/donutIcon.svg" alt="Create Post">
+    <body>
+        <!----------------------------------------------navbar------------------------------------------------>
+        <nav>
+            <div class="container">
+                <h2 class="logo">DOUGHNUT DIARIES</h2>
+                <div class="search-bar">
+                    <i class="uil uil-search"></i>
+                    <input type="search" placeholder="Search for creators, inspirations and projects" />
+                </div>
+                <div class="create">
+                    <!-- <label class="btn btn-primary" for="create-post">New post</label> -->
+
+                    <button id="recent" class="btn btn-primary rounded-5 fw-bold">
+                        Recent
                     </button>
+                    <div class="profile-pic">
+                        <img class="img" src="./img/Doughnut_logo-removebg-preview.png" alt="pic 1" />
+                    </div>
+                </div>
+            </div>
+        </nav>
+      
+        <main>
+            <div class="container">
+                <!----------------------------------------left column------------------------------------------------------>
+                <div class="left">
+                    <div class="sidebar">
+                        <a class="menu-item active">
+                            <span><i class="uil uil-home"></i></span>
+                            <h3>Home</h3>
+                        </a>
+                        <a class="menu-item" id="notifications">
+                            <span><i class="uil uil-bell"><small class="notification-count">9+</small></i></span>
+                            <h3>Notifications</h3>
+                            <div class="notifications-popup">
+                                <div>
+                                    <div class="profile-pic">
+                                        <img class="img" src="./img/profile-img/profile8.png">
+                                    </div>
+                                    <div class="notification-body">
+                                        <b>Abigail Willey</b> accepted your friend request
+                                        <small class="text-muted">2 DAYS AGO</small>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="profile-pic">
+                                        <img class="img" src="./img/profile-img/profile7.png">
+                                    </div>
+                                    <div class="notification-body">
+                                        <b>Varun Nair</b> commented on your post
+                                        <small class="text-muted">1 HOUR AGO</small>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="profile-pic">
+                                        <img class="img" src="./img/profile-img/profile6.png">
+                                    </div>
+                                    <div class="notification-body">
+                                        <b>Marry Opmong</b> and 210 other liked your post
+                                        <small class="text-muted">4 MINUTES AGO</small>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="profile-pic">
+                                        <img class="img" src="./img/profile-img/profile5.png">
+                                    </div>
+                                    <div class="notification-body">
+                                        <b>Wilson Fisk</b> started following you
+                                        <small class="text-muted"> 11 HOURS AGO</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="menu-item" id="messages-notifications">
+                            <i class="uil uil-envelope"><small class="notification-count">6</small></i></span>
+                            <h3>Messages</h3>
+                        </a>
+                        <a class="menu-item" href="profile.html">
+                            <span><i class="uil uil-setting"></i></span>
+                            <h3>Profile</h3>
+                        </a>
+
+                        <button class="btn btn-primary" for="create-post" id="logoutBtn">Sign Out</button>
+                    </div>
+                </div>
+
+                <!----------------------------------------middle column------------------------------------------------------>
+                <div class="middle">
+                    <div class="container2" id="createprofile" class="modal" tabindex="-1">
+                        <div class="wrapper">
+                            <section class="post">
+                                <header>Create Post</header>
+                                <form id="postForm" class="postForm" action ="">
+                                    <div class="content">
+                                        <img id="postformimg" src="img/profile-img/profile3.png" alt="logo">
+                                        <div class="details">
+                                            <h5 id="username1">Username</h5>
+                                        </div>
+                                    </div>
+                                    <textarea id="createPost" placeholder="Write your post" spellcheck="false" required></textarea>
                     
-                  </div>
-                  <div id="emojisContainer" class="container">
-                  <div id="emojis" class="btn-group">
-                    <img src="/images/EmojiPost/cry.png" id="cry" class="cry">
-                    <img src="/images/EmojiPost/happy.png" id="happy" class="happy">
-                    <img src="/images/EmojiPost/hearteye.png" id="hearteye" class="hearteye">
-                    <img src="/images/EmojiPost/laughtear.png" id="laughtear" class="laughtear">
-                    <img src="/images/EmojiPost/hearteye.png" id="heart" class="heart">
-                    <input type="file" id="addimg" accept="image/png, image/jpg">
-                    <input id="imghidden" type="hidden">
-                    
-                  </div>
+                                    <div id="emojisContainer" class="row">
+                                        <div id="emojis" class="btn-group">
+                                            <img src="img/emoji/cry.png" id="cry" class="cry">
+                                            <img src="img/emoji/happy.png" id="happy" class="happy">
+                                            <img src="img/emoji/hearteye.png" id="hearteye" class="hearteye">
+                                            <img src="img/emoji/laughtear.png" id="laughtear" class="laughtear">
+                                            <img src="img/emoji/heart.png" id="heart" class="heart">
+                                            <input type="file" class="form-control" id="addimg" accept="image/png, image/jpg">
+                                        <input id="imghidden" type="hidden">
+                                        
+                                        </div>
+                                    </div>
+                                    <div style="display: flex; justify-content: center;">
+                                        <button class="btn" type="submit" id="submitbtn" data-bs-placement="top" title="Create Post"><img src="img/post/donutIcon.png" width="50px"></button>
+                                    </div>
+                                </form>
+                            </section>
+                        </div>
+                    </div>
+                    <div id="posts"></div>
                 </div>
-              </div>
-                </form>
-                <div id="posts"></div>
-                
-            </div>
-            <div id="posts"></div>
-          </div>
-        </div>
 
-        <!------------------------------right column of the page---------------------------------->
-          <div class="right">
-            <div class="messages">
-              <div class="heading">
-                <h4>Messages</h4>
-                <span><i class="uil uil-edit"></i></span>
-              </div>
+                <!----------------------------------------right column------------------------------------------------------>
+                <div class="right">
+                    <div class="messages">
+                        <div class="heading">
+                            <h4>Messages</h4>
+                            <span><i class="uil uil-edit"></i></span>
+                        </div>
+
+                        <div class="category">
+                            <h6 class="active">Primary</h6>
+                            <h6>General</h6>
+                            <h6 class="message-requests">Requests(7)</h6>
+                        </div>
+                        <div class="message">
+                            <div class="profile-pic">
+                              <img src="img/post/Cheldonut.png" id="cheldonut-img" />
+                              <div class="active"></div>
+                            </div>
+                            <div class="message-body">
+                              <h5>Chelsea Sharma</h5>
+                              <p class="text-muted">Why did the donut go to the dentist? It needed a filling!</p>
+                            </div>
+                        </div>
+                        <div class="message">
+                            <div class="profile-pic">
+                              <img src="img/post/Aflakdonut.jpg" id="aflakdonut-img" />
+                              <div class="active"></div>
+                            </div>
+                            <div class="message-body">
+                              <h5>Aflak Chemali</h5>
+                              <p class="text-bold">Ong glazed is the best</p>
+                            </div>
+                        </div>
+                        <div class="message">
+                            <div class="profile-pic">
+                              <img src="img/post/BryanOF.png" id="bryanof-img" />
+                            </div>
+                            <div class="message-body">
+                              <h5>Bryan Herrera</h5>
+                              <p class="text-muted">You got the dough and I'll bring the nut? </p>
+                            </div>
+                        </div>
+                        <div class="message">
+                            <div class="profile-pic">
+                              <img src="img/post/yuenmochi.png" id="yuenmochi-img" />
+                            </div>
+                            <div class="message-body">
+                              <h5>Yuen Zhang</h5>
+                              <p class="text-bold">No Cap Mochi donuts schmack frfr</p>
+                            </div>
+                        </div>
+                    </div>
+
+          
+                    <div class="friend-requests">
+                        <h4>Requests</h4>
+                        <div class="request">
+                          <div class="info">
+                            <div class="profile-pic">
+                              <img src="img/post/MBjordan.png" />
+                            </div>
+                            <div>
+                              <h5>Michael B. Jordan</h5>
+                              <p class="text-muted">8 mutual friends</p>
+                            </div>
+                          </div>
+                          <div class="action">
+                            <button class="btn btn-primary">Accept</button>
+                            <button class="btn">Decline</button>
+                          </div>
+                        </div>
+                        <div class="request">
+                          <div class="info">
+                            <div class="profile-pic">
+                              <img src="img/post/Anniedonut.jpg" />
+                            </div>
+                            <div>
+                              <h5>Annie Leonhart</h5>
+                              <p class="text-muted">2 mutual friends</p>
+                            </div>
+                          </div>
+                          <div class="action">
+                            <button class="btn btn-primary">Accept</button>
+                            <button class="btn">Decline</button>
+                          </div>
+                        </div>
+          
 
 
+                </div>
+            </div>
+        </main>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-        <div class="right">
-          <div class="messages">
-            <div class="heading">
-              <h4>Messages</h4>
-              <span><i class="uil uil-edit"></i></span>
-            </div>
 
-        
-            <div class="category">
-              <h6 class="active">Primary</h6>
-              <h6>General</h6>
-              <h6 class="message-requests">Requests(7)</h6>
-            </div>
-            <div class="message">
-              <div class="profile-pic">
-                <img src="images/Cheldonut.png" id="cheldonut-img" />
-                <div class="active"></div>
-              </div>
-              <div class="message-body">
-                <h5>Chelsea Sharma</h5>
-                <p class="text-muted">Why did the donut go to the dentist? It needed a filling!</p>
-              </div>
-            </div>
-            
-            <div class="message">
-              <div class="profile-pic">
-                <img src="images/Aflakdonut.jpg" id="aflakdonut-img" />
-                <div class="active"></div>
-              </div>
-              <div class="message-body">
-                <h5>Aflak Chemali</h5>
-                <p class="text-bold">Ong glazed is the best</p>
-              </div>
-            </div>
-            
-            <div class="message">
-              <div class="profile-pic">
-                <img src="images/BryanOF.png" id="bryanof-img" />
-              </div>
-              <div class="message-body">
-                <h5>Bryan Herrera</h5>
-                <p class="text-muted">You got the dough and I'll bring the nut? </p>
-              </div>
-            </div>
-            
-            <div class="message">
-              <div class="profile-pic">
-                <img src="images/yuenmochi.png" id="yuenmochi-img" />
-              </div>
-              <div class="message-body">
-                <h5>Yuen Zhang</h5>
-                <p class="text-bold">No Cap Mochi donuts schmack frfr</p>
-              </div>
-            </div>
-            
-          <div class="friend-requests">
-            <h4>Requests</h4>
-            <div class="request">
-              <div class="info">
-                <div class="profile-pic">
-                  <img src="images/MBjordan.png" id="mbjordan-img" />
-                </div>
-                <div class="message-body">
-                  <h5>Chelsea Sharma</h5>
-                  <p class="text-muted">Why did the donut go to the dentist? It needed a filling!</p>
-                </div>
-              </div>
-              <div class="message">
-                <div class="profile-pic">
-                  <img src="images/Anniedonut.jpg" id="anniedonut-img" />
-                </div>
-                <div class="message-body">
-                  <h5>Aflak Chemali</h5>
-                  <p class="text-bold">Ong glazed is the best</p>
-                </div>
-              </div>
-              <div class="message">
-                <div class="profile-pic">
-                  <img src="images/BryanOF.png" />
-                </div>
-                <div class="message-body">
-                  <h5>Bryan Herrera</h5>
-                  <p class="text-muted">You got the dough and i'll bring the nut? </p>
-                </div>
-              </div>
-              <div class="message">
-                <div class="profile-pic">
-                  <img src="images/yuenmochi.png" />
-                </div>
-                <div class="message-body">
-                  <h5>Yuen Zhang</h5>
-                  <p class="text-bold">No Cap Mochi donuts schmack frfr</p>
-                </div>
-              </div>
-              
-            <div class="friend-requests">
-              <h4>Requests</h4>
-              <div class="request">
-                <div class="info">
-                  <div class="profile-pic">
-                    <img src="images/MBjordan.png" />
-                  </div>
-                  <div>
-                    <h5>Michael B. Jordan</h5>
-                    <p class="text-muted">8 mutual friends</p>
-                  </div>
-                </div>
-                <div class="action">
-                  <button class="btn btn-primary">Accept</button>
-                  <button class="btn">Decline</button>
-                </div>
-              </div>
-              <div class="request">
-                <div class="info">
-                  <div class="profile-pic">
-                    <img src="images/Anniedonut.jpg" />
-                  </div>
-                  <div>
-                    <h5>Annie Leonhart</h5>
-                    <p class="text-muted">2 mutual friends</p>
-                  </div>
-                </div>
-                <div class="action">
-                  <button class="btn btn-primary">Accept</button>
-                  <button class="btn">Decline</button>
-                </div>
-              </div>
-              
-                
-              </div>
-            </div>
-          </div>
-        </div>
-      </main>
-      <script src="js/post.js"></script>
-  </body>
+        <!-- Page-specific code -->
+        <script src="./js/post.js"></script>
+
+    </body>
+
 </html>

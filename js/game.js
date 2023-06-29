@@ -5,11 +5,6 @@ let isStart=false;
 let isFirsttime=true;
 control();
 
-//screen size detect
-let screenSize = window.matchMedia("(max-width: 750px)");
-const smallScreenDiv = $("#smallScreen")[0];
-detectScreen(screenSize);
-screenSize.addEventListener("change", detectScreen);
 
 //get the character info
 let character = $("#character")[0];
@@ -129,11 +124,4 @@ function control() {
          if(isStart && !isFirsttime) jump(isFirsttime)
          isFirsttime=false;
      })
-}
-
-//function for small screen size
-function detectScreen(size) {
-    if(size.match) {
-        smallScreenDiv.innerHTML = `<h4>Sorry, the small screen version coming soon!</h4>`;
-    }
 }

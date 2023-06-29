@@ -123,9 +123,5 @@ h3 {
         background-color: var(--purple);
         background-image: none;
     }
-    #gamediv {
-        display: none;
-    }
-
 }
 

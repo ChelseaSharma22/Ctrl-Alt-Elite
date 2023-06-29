@@ -28,7 +28,7 @@ window.addEventListener("load", function () {
   moreInfo();
  
   saveEditsBtn.onclick = updateProfile;
-  document.getElementById("username").innerText = "@" + currentUser;
+  document.getElementById("username").innerText = "Welcome " + currentUser + " !";
   document.getElementById("username1").innerHTML = currentUser;
 
 });

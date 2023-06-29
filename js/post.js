@@ -7,10 +7,18 @@ const postsContainer = document.getElementById("posts");
 const logoutBtn = document.getElementById("logoutBtn");
 const recentBtn = document.getElementById("recent");
 const createPostInput = document.getElementById("createPost");
-
+const sortOrder = document.getElementById("sortorder");
 const imghidden = document.getElementById("imghidden");
 const input = document.getElementById("addimg");
+const userName = document.getElementById("username1");
+const loginData = loggedIn();
+console.log(loginData);
+const currentUser = loginData.username.substr(0,loginData.username.length-5);
 
+//things to do when page load
+window.addEventListener("load", function () {
+  userName.innerHTML = currentUser;
+})
 //profile img array
 let profileImg = [
   "profile1.png",
@@ -28,7 +36,7 @@ let emojiGroup=[]
 let emojisTag = document.getElementById("emojis").getElementsByTagName("img");
 for(dom of emojisTag ){ //replace dom loop
   let _this=dom;
-  dom.addEventListener("click",function(){
+  dom.addEventListener("click",function() {
     //console.log(_this.id)
     document.getElementById("createPost").value+=("%"+_this.id+"%")
   })
@@ -58,8 +66,7 @@ if (userLoggedIn) {
     //console.log(data);
     updateUI(data);
   });
-  
-
+ 
   // Add event listener for form submission to create post
   postForm.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -73,7 +80,7 @@ if (userLoggedIn) {
     //filter the post only for our website
     let posts=allPosts.filter(post=>{
       if((new RegExp(/.*donut/)).test(post.username)){
-        console.log(post);
+        //console.log(post);
         post.username=post.username.substr(0,post.username.length-5);
         //console.log(post.username)
         return post
@@ -107,12 +114,15 @@ if (userLoggedIn) {
       }
       
       const postDiv = document.createElement("div");
-      postDiv.className = "post";
+      postDiv.className = "card";
 
       const userProfile = document.createElement("div");
       userProfile.className = "userProfile";
-      userProfile.innerHTML = `<img class="profileimg" src="img/profile-img/${profileImg[parseInt(Math.random()*profileImg.length)]}">
-                                <h5>${username}</h5>`
+      userProfile.innerHTML = `<div>
+                                <img class="profileimg" src="img/profile-img/${profileImg[parseInt(Math.random()*profileImg.length)]}">
+                              </div>
+                              <h5>${username}</h5>
+                                `
 
       const postContent = document.createElement("div");
       postContent.className = "post-content";
@@ -120,35 +130,41 @@ if (userLoggedIn) {
 
       const postDetails = document.createElement("div");
       postDetails.className = "post-details";
-      postDetails.innerHTML = `<span class="post-likes">${likes.length} likes</span> | <span class="post-author">${username}</span> | <span class="post-date">${createdAt}</span>`;
+      postDetails.innerHTML = `<span class="post-likes">${likes.length} likes</span>  <span class="post-author">${username}</span>  <span class="post-date">${createdAt}</span>`;
 
       const likeBtn = document.createElement("button");
       likeBtn.id = "like*"+_id;
       likeBtn.addEventListener("click", () => likePost(post));
+      likeBtn.className = "like-button";
       likeBtn.textContent = "";
-      likeBtn.classList.add("like-button");
       
 
       const dislikeBtn = document.createElement("button");
       dislikeBtn.id ="dislike*"+ _id;
       dislikeBtn.addEventListener("click", () => dislikePost(post));
+      dislikeBtn.className = "dislike-button";
       dislikeBtn.textContent = "";
-      dislikeBtn.classList.add("dislike-button");
       
 
       const deleteBtn = document.createElement("button");
       deleteBtn.id = "delete*"+ _id;
       deleteBtn.addEventListener("click", () => deleteUserPost(post));
+      deleteBtn.className = "delete-button";
       deleteBtn.textContent = "";
-      deleteBtn.classList.add("delete-button");
       
+      const btndiv = document.createElement("div");
+      btndiv.className = "btndiv";
+      btndiv.appendChild(likeBtn);
+      btndiv.appendChild(dislikeBtn);
+      btndiv.appendChild(deleteBtn);
 
       postDiv.appendChild(userProfile);
       postDiv.appendChild(postContent);
+      postDiv.appendChild(btndiv);
       postDiv.appendChild(postDetails);
-      postDiv.appendChild(likeBtn);
-      postDiv.appendChild(dislikeBtn);
-      postDiv.appendChild(deleteBtn);
+      // postDiv.appendChild(likeBtn);
+      // postDiv.appendChild(dislikeBtn);
+      // postDiv.appendChild(deleteBtn);
 
       postsContainer.appendChild(postDiv);
 
@@ -192,6 +208,7 @@ function loggedIn() {
   return JSON.parse(loginJSON) || null;
 };
 
+//////////////////////////////////////////function///////////////////////////////////////////////////////////////////
 // Logout function
 function logout() {
   const loginData = loggedIn();

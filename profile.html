@@ -5,7 +5,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>Profile</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -53,22 +53,14 @@
                 <!----------------------------------------left column------------------------------------------------------>
                 <div class="left">
                     <a class="profile">
-                        <div class="profile-pic">
-                            <img class="img" src="./img/Doughnut_logo-removebg-preview.png">
-                        </div>
                         <div class="handle">
                             <h4 id="username">Username</h4>
-                        
                         </div>
                     </a>
                     <div class="sidebar">
-                        <a class="menu-item active">
+                        <a class="menu-item" href="post.html">
                             <span><i class="uil uil-home"></i></span>
                             <h3>Home</h3>
-                        </a>
-                        <a class="menu-item ">
-                            <span><i class="uil uil-compass"></i></span>
-                            <h3>Explore</h3>
                         </a>
                         <a class="menu-item" id="notifications">
                             <span><i class="uil uil-bell"><small class="notification-count">9+</small></i></span>
@@ -117,20 +109,12 @@
                             <h3>Messages</h3>
                         </a>
                         <a class="menu-item ">
-                            <span><i class="uil uil-bookmark"></i></span>
-                            <h3>Bookmarks</h3>
-                        </a>
-                        <a class="menu-item ">
-                            <span><i class="uil uil-analytics"></i></span>
-                            <h3>Analytics</h3>
-                        </a>
-                        <a class="menu-item ">
                             <span><i class="uil uil-palette"></i></span>
                             <h3>Theme</h3>
                         </a>
-                        <a class="menu-item ">
+                        <a class="menu-item active">
                             <span><i class="uil uil-setting"></i></span>
-                            <h3>Settings</h3>
+                            <h3>Profile</h3>
                         </a>
 
                         <button class="btn btn-primary" for="create-post" id="logoutBtn">Sign Out</button>
@@ -151,7 +135,7 @@
                                         </div>
                                         <h4 id="ProfileName" class="mb-2">hi</h4>
                                         <p class="text-muted mb-4">@DonutLover <span class="mx-2">|</span> <a
-                                                href="#!">mdbootstrap.com</a></p>
+                                                href="#!">DoughnutDiaries.com</a></p>
 
                                         <div class="modal-dialog">
                                             <div class="modal-content">
@@ -212,7 +196,7 @@
                                     <div class="content">
                                         <img src="img/my a.webp" alt="logo">
                                         <div class="details">
-                                            <p id="username1">Username</p>
+                                            <h5 id="username1">Username</h5>
                                         </div>
                                     </div>
                                     <textarea id="createPost" placeholder="What's on your mind?" spellcheck="false"
