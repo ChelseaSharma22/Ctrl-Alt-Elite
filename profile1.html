@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.6/css/unicons.css" />
+    <link rel="stylesheet" href="profile1.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+
+    <!-- Run BEFORE page is finished loading (before window.onload): -->
+    <!-- <script src="auth.js"></script>  -->
+    <!-- <script>
+     if (loggedIn() === false) window.location.replace("index.html");
+    </script> -->
+
+</head>
+
+<body>
+    <nav>
+        <div class="container">
+            <h2 class="logo">DOUGHNUT</h2>
+            <div class="search-bar">
+                <i class="uil uil-search"></i>
+                <input type="search" placeholder="Search for creators, inspirations and projects" />
+            </div>
+            <div class="create">
+                <!-- <label class="btn btn-primary" for="create-post">New post</label> -->
+
+                <button id="createprofilebtn" class="btn btn-primary rounded-5 fw-bold" data-bs-toggle="modal"
+                    data-bs-target="#editProfileModal">
+                    Edit Profile
+                </button>
+                <div class="profile-pic">
+                    <img class="img" src="img/Doughnut_logo.png" alt="pic 1" />
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <div class="left">
+                <a class="profile">
+                    <div class="profile-pic">
+                        <img class="img" src="img/Doughnut_logo.png">
+                    </div>
+                    <div class="handle">
+                        <h4 id="fullName1">Username</h4>
+
+                    </div>
+                </a>
+                <div class="sidebar">
+                    <a class="menu-item active">
+                        <span><i class="uil uil-home"></i></span>
+                        <h3>Home</h3>
+                    </a>
+                    <a class="menu-item ">
+                        <span><i class="uil uil-compass"></i></span>
+                        <h3>Explore</h3>
+                    </a>
+                    <a class="menu-item" id="notifications">
+                        <span><i class="uil uil-bell"><small class="notification-count">9+</small></i></span>
+                        <h3>Notifications</h3>
+                        <div class="notifications-popup">
+                            <div>
+                                <div class="profile-pic">
+                                    <img class="img" src="./images/profile-10.jpg">
+                                </div>
+                                <div class="notification-body">
+                                    <b>Abigail Willey</b> accepted your friend request
+                                    <small class="text-muted">2 DAYS AGO</small>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="profile-pic">
+                                    <img class="img" src="./images/profile-11.jpg">
+                                </div>
+                                <div class="notification-body">
+                                    <b>Varun Nair</b> commented on your post
+                                    <small class="text-muted">1 HOUR AGO</small>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="profile-pic">
+                                    <img class="img" src="./images/profile-12.jpg">
+                                </div>
+                                <div class="notification-body">
+                                    <b>Marry Opmong</b> and 210 other liked your post
+                                    <small class="text-muted">4 MINUTES AGO</small>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="profile-pic">
+                                    <img class="img" src="./images/profile-13.jpg">
+                                </div>
+                                <div class="notification-body">
+                                    <b>Wilson Fisk</b> started following you
+                                    <small class="text-muted"> 11 HOURS AGO</small>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="menu-item" id="messages-notifications">
+                        <i class="uil uil-envelope"><small class="notification-count">6</small></i></span>
+                        <h3>Messages</h3>
+                    </a>
+                    <a class="menu-item ">
+                        <span><i class="uil uil-bookmark"></i></span>
+                        <h3>Bookmarks</h3>
+                    </a>
+                    <a class="menu-item ">
+                        <span><i class="uil uil-analytics"></i></span>
+                        <h3>Analytics</h3>
+                    </a>
+                    <a class="menu-item ">
+                        <span><i class="uil uil-palette"></i></span>
+                        <h3>Theme</h3>
+                    </a>
+                    <a class="menu-item ">
+                        <span><i class="uil uil-setting"></i></span>
+                        <h3>Settings</h3>
+                    </a>
+
+                    <button class="btn btn-primary" for="create-post" id="logoutBtn">Sign Out</button>
+                </div>
+            </div>
+
+            <div class="middle">
+                <div id="editProfileModal" class="modal" tabindex="-1">
+
+                    <div class="vh-100" id="editprofilecard">
+                        <div class="container py-5 h-100 ">
+                            <div id="s" class="card" style="border-radius: 10px;">
+                                <div class="card-body text-center">
+                                    <div class="mt-3 mb-4">
+                                        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava2-bg.webp"
+                                            class="rounded-circle img-fluid" style="width: 100px;" />
+                                    </div>
+                                    <h4 id="ProfileName" class="mb-2">hi</h4>
+                                    <p class="text-muted mb-4">@Programmer <span class="mx-2">|</span> <a
+                                            href="#!">mdbootstrap.com</a></p>
+
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title">Edit Profile</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form id="editProfileForm">
+                                                    <div class="form-group">
+                                                        <input id="fullNameInput" type="text" class="form-control"
+                                                            placeholder="Username">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <textarea id="bioInput" class="form-control"
+                                                            placeholder="Bio"></textarea>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="password" class="form-control"
+                                                            placeholder="Confirm Password">
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button id="editSaveBtn" type="button" class="btn btn-primary"
+                                                    data-bs-dismiss="modal">Save Changes</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-4 pb-2">
+
+                                </div>
+                                <div class="d-flex justify-content-between text-center mt-5 mb-2">
+                                    <div>
+                                        <p class="mb-2 h5">8471</p>
+                                        <p id="" class="text-muted mb-0">Posts</p>
+                                    </div>
+                                    <div class="px-3">
+                                        <p class="mb-2 h5">8512</p>
+                                        <p class="text-muted mb-0">Followers</p>
+                                    </div>
+                                    <div>
+                                        <p class="mb-2 h5">06/24/1901</p>
+                                        <p class="text-muted mb-0">Member Since</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container2" id="createprofile" class="modal" tabindex="-1">
+                    <div class="wrapper">
+                        <section class="post">
+                            <header>Create Post</header>
+                            <form id="postForm" class="postForm" action="">
+                                <div class="content">
+                                    <img src="img/donut.jpg" alt="logo">
+                                    <div class="details">
+                                        <p>doughnut</p>
+                                        <div class="privacy">
+                                            <i class="fas fa-user-friends"></i>
+                                            <span>Friends</span>
+                                            <i class="fas fa-caret-down"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <textarea id="createPost" placeholder="What's on your mind?" spellcheck="false"
+                                    required></textarea>
+                                <div class="theme-emoji">
+                                    <img src="./img/theme.svg" alt="theme">
+                                    <img src="./img/smile.svg" alt="smile">
+                                </div>
+                                <div class="options">
+                                    <p>Add to Your Post</p>
+
+                                    <ul id="emojis" style="display: none;">
+                                        <li><img src="./img/cry.png" id="cry" class="emoji"></li>
+                                        <li><img src="./img/happy.png" id="happy" class="emoji"></li>
+                                        <li> <img src="./img/hearteye.png" id="hearteye" class="emoji"></li>
+                                        <li> <img src="./img/laughtear.png" id="laughtear" class="emoji"></li>
+                                        <li> <img src="./img/heart.png" id="heart" class="emoji"></li>
+                                    </ul>
+
+
+                                    <ul class="list">
+                                    
+                                        <li><img src="img/gallery.svg" alt="gallery"></li>
+                                        <li><img src="img/tag.svg" alt="gallery"></li>
+                                        <li><img id="showImagesButton" src="img/emoji.svg" alt="gallery"></li>
+                                        <li><img src="img/mic.svg" alt="gallery"></li>
+                                        <li><img src="img/more.svg" alt="gallery"></li>
+                                    </ul>
+
+                                </div>
+
+                                <button type="submit" id="profilePost">Post</button>
+                            </form>
+                        </section>
+                        <section class="audience">
+                            <header>
+                                <div class="arrow-back"><i class="fas fa-arrow-left"></i></div>
+                                <p>Select Audience</p>
+                            </header>
+                            <div class="content">
+                                <p>Who can see your post?</p>
+                                <span>Your post will show up in News Feed, on your profile and in search results.</span>
+                            </div>
+                            <ul class="list">
+                                <li>
+                                    <div class="column">
+                                        <div class="icon"><i class="fas fa-globe-asia"></i></div>
+                                        <div class="details">
+                                            <p>Public</p>
+                                            <span>Anyone on or off Facebook</span>
+                                        </div>
+                                    </div>
+                                    <div class="radio"></div>
+                                </li>
+                                <li class="active">
+                                    <div class="column">
+                                        <div class="icon"><i class="fas fa-user-friends"></i></div>
+                                        <div class="details">
+                                            <p>Friends</p>
+                                            <span>Your friends on Facebook</span>
+                                        </div>
+                                    </div>
+                                    <div class="radio"></div>
+                                </li>
+                                <li>
+                                    <div class="column">
+                                        <div class="icon"><i class="fas fa-user"></i></div>
+                                        <div class="details">
+                                            <p>Specific</p>
+                                            <span>Only show to some friends</span>
+                                        </div>
+                                    </div>
+                                    <div class="radio"></div>
+                                </li>
+                                <li>
+                                    <div class="column">
+                                        <div class="icon"><i class="fas fa-lock"></i></div>
+                                        <div class="details">
+                                            <p>Only me</p>
+                                            <span>Only you can see your post</span>
+                                        </div>
+                                    </div>
+                                    <div class="radio"></div>
+                                </li>
+                                <li>
+                                    <div class="column">
+                                        <div class="icon"><i class="fas fa-cog"></i></div>
+                                        <div class="details">
+                                            <p>Custom</p>
+                                            <span>Include and exclude friends</span>
+                                        </div>
+                                    </div>
+                                    <div class="radio"></div>
+                                </li>
+                            </ul>
+                        </section>
+                    </div>
+                </div>
+
+
+
+                <div class="profile-card">
+                    <div class="profile-img">
+                        <img src="img/my a.webp" alt="Team Image" />
+                    </div>
+                    <div class="profile-content">
+                        <h2 class="title">
+                            <p id="fullName" class="text-muted">@dddd</p>
+                            <p id="bio" class="text-muted">@dddd</p>
+
+
+                            <span>Designer & Developer</span>
+                            <!--<button   class="btn btn-primary" for="create-post" id="editPro" >Edit profile</button>-->
+                            <div>
+
+                                <button id="editProfileButton" class="btn btn-primary rounded-5 fw-bold"
+                                    data-bs-toggle="modal" data-bs-target="#editProfileModal">
+                                    Edit Profile
+                                </button>
+                            </div>
+
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+
+
+
+
+            </div>
+
+
+
+
+
+
+
+            <div class="right">
+                <div class="messages">
+                    <div class="heading">
+                        <h4>Messages</h4>
+                        <span><i class="uil uil-edit"></i></span>
+                    </div>
+
+                    <div class="search-bar">
+                        <span><i class="uil uil-search"></i></span>
+                        <input type="search" placeholder="Search Messages" id="message-search">
+                    </div>
+
+                    <div class="category">
+                        <h6 class="active">Primary</h6>
+                        <h6>General</h6>
+                        <h6 class="message-requests">Requests(7)</h6>
+                    </div>
+                    <div class="message">
+                        <div class="profile-pic">
+                            <img class="img" src="images/profile-17.jpg">
+                            <div class="active"></div>
+                        </div>
+                        <div class="message-body">
+                            <h5>Kareena Joshua</h5>
+                            <p class="text-muted">Just woke up bruh..</p>
+                        </div>
+                    </div>
+                    <div class="message">
+                        <div class="profile-pic">
+                            <img class="img" src="images/profile-18.jpg">
+                            <div class="active"></div>
+                        </div>
+                        <div class="message-body">
+                            <h5>Dan Smith</h5>
+                            <p class="text-bold">2 New Messages</p>
+                        </div>
+                    </div>
+                    <div class="message">
+                        <div class="profile-pic">
+                            <img class="img" src="images/profile-15.jpg">
+                        </div>
+                        <div class="message-body">
+                            <h5>Chris Brown</h5>
+                            <p class="text-muted">Lol u right</p>
+                        </div>
+                    </div>
+                    <div class="message">
+                        <div class="profile-pic">
+                            <img class="img" src="images/profile-14.jpg">
+                        </div>
+                        <div class="message-body">
+                            <h5>Lana Rose</h5>
+                            <p class="text-bold">Birthday tomorrow!!</p>
+                        </div>
+                    </div>
+                    <div class="message">
+                        <div class="profile-pic">
+                            <img class="img" src="images/profile-11.jpg">
+                        </div>
+                        <div class="message-body">
+                            <h5>Varun Nair</h5>
+                            <p class="text-muted">Ssup?</p>
+                        </div>
+                    </div>
+                    <div class="message">
+                        <div class="profile-pic">
+                            <img class="img" src="images/profile-1.jpg">
+                            <div class="active"></div>
+                        </div>
+                        <div class="message-body">
+                            <h5>Jahnvi Doifode</h5>
+                            <p class="text-bold">3 New Messages</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="friend-requests">
+                    <h4>Requests</h4>
+                    <div class="request">
+                        <div class="info">
+                            <div class="profile-pic">
+                                <img class="img" src="images/profile-13.jpg">
+                            </div>
+                            <div>
+                                <h5>Wilson Fisk</h5>
+                                <p class="text-muted">8 mutual friends</p>
+
+                            </div>
+                        </div>
+                        <div class="action">
+                            <button class="btn btn-primary">Accept</button>
+                            <button class="btn">Decline</button>
+                        </div>
+                    </div>
+                    <div class="request">
+                        <div class="info">
+                            <div class="profile-pic">
+                                <img class="img" src="images/profile-20.jpg">
+                            </div>
+                            <div>
+                                <h5>Srishti Tirkey</h5>
+                                <p class="text-muted">2 mutual friends</p>
+
+                            </div>
+                        </div>
+                        <div class="action">
+                            <button class="btn btn-primary">Accept</button>
+                            <button class="btn">Decline</button>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!--  <script>
+  $(document).ready(function() {
+    $("#editProfileButton").click(function() {
+      $("body").addClass("blur");
+    });
+  });
+</script>  -->
+
+
+    <!-- Page-specific code -->
+    <script src="profile.js"></script>
+
+
+
+
+
+
+
+</html>

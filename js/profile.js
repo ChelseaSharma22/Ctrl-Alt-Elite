@@ -28,8 +28,9 @@ window.addEventListener("load", function () {
   moreInfo();
  
   saveEditsBtn.onclick = updateProfile;
-  document.getElementById("username").innerText = "Welcome " + currentUser + " !";
-  document.getElementById("username1").innerHTML = currentUser;
+  document.getElementById("name").innerHTML = "@" + currentUser;
+
+
 
 });
 
@@ -77,6 +78,11 @@ function logout() {
     });
 };
 
+// Function to sort posts by most likes
+const filterByMostLikes = (posts) => {
+  return posts.sort((a, b) => b.likes.length - a.likes.length);
+};
+
 // Update Profile when Edit Profile Saved
 function updateProfile(event) {
     event.preventDefault();
@@ -120,6 +126,9 @@ function moreInfo() {
             userFullName.innerHTML = data.fullName;
             bio.innerHTML = data.bio;
             ProfileName.innerHTML = data.fullName;
+            userFullName1.innerHTML = data.fullName;
+
+          
             
         });
 }
