@@ -81,6 +81,11 @@ function logout() {
     });
 };
 
+// Function to sort posts by most likes
+const filterByMostLikes = (posts) => {
+  return posts.sort((a, b) => b.likes.length - a.likes.length);
+};
+
 // Update Profile when Edit Profile Saved
 function updateProfile(event) {
     event.preventDefault();

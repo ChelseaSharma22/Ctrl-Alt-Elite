@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      background-image: url("old-background.jpg"); /* Default background image */
+    }
+    .hidden {
+      display: none; /* Hide HTML content */
+    }
+  </style>
+</head>
+<body>
+  <button onclick="changeBackground()">Change Background</button>
+  <script>
+    function changeBackground() {
+      document.body.style.backgroundImage = "url('new-background.jpg')"; // Change the background image
+      
+      var htmlContent = document.getElementsByTagName("body")[0]; // Get the HTML content
+      htmlContent.classList.add("hidden"); // Add 'hidden' class to hide the HTML content
+      
+      setTimeout(function() {
+        window.location.href = "new-page.html"; // Redirect to another page after 5 seconds
+      }, 5000); // 5 seconds delay
+    }
+  </script>
+</body>
+</html>
