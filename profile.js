@@ -47,6 +47,9 @@ const filterByMostLikes = (posts) => {
 const loginData = loggedIn();
 const currentUser = loginData.username;
 const userFullName = document.getElementById("fullName");
+const userFullName1 = document.getElementById("fullName1");
+
+
 const userCreationDate = document.getElementById("createdAt");
 const signoutBtn = document.getElementById("signoutBtn");
 const bio = document.getElementById("bio");
@@ -121,6 +124,9 @@ function moreInfo() {
             userFullName.innerHTML = data.fullName;
             bio.innerHTML = data.bio;
             ProfileName.innerHTML = data.fullName;
+            userFullName1.innerHTML = data.fullName;
+
+          
             
         });
 }
