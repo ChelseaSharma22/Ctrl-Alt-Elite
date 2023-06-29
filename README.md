@@ -29,13 +29,17 @@ Users are able to
      - Users can change their displayed username
      - Users can change what their Bio displays.
      - Users can edit their profile by clicking on the top right "edit profile" Button or by scrolling to the bottom and hovering the mouse over the doughnut image.
-     - Users can view their profile by hovering over the pink doughnut image
+     - Users can view their profile by hovering over the pink doughnut image to view the contents of their profile.
+     - Users can also post from their profile page as well.
       ![Screenshot 2023-06-29 at 11 39 28 AM](https://github.com/ChelseaSharma22/Ctrl-Alt-Elite/assets/130613286/6bdc47e3-d235-4bac-8909-1e542f7b0525)
 
 * Reset Password if User password is unattainable (! This fuction is not working yet just for show !)
+     - Users can reset their passwords
+     - "Already have an account" button directs users back to the log in page.
       ![Screenshot 2023-06-29 at 11 51 02 AM](https://github.com/ChelseaSharma22/Ctrl-Alt-Elite/assets/130613286/4893d3f9-6c79-44a3-87d0-09b8d0a584c1)
 
 * Hidden Game that can be reachable and attainable by clicking on the top left logo on the login page
+     - Top center logo directs the user back to the log in page.
       ![Screenshot 2023-06-29 at 11 52 29 AM](https://github.com/ChelseaSharma22/Ctrl-Alt-Elite/assets/130613286/8c68802f-4fc3-476b-989e-3afb9310c6f7)
 
 
