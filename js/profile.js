@@ -124,6 +124,33 @@ function moreInfo() {
         });
 }
 
+//for the emoji group pop up
+document.getElementById("showImagesButton").addEventListener("click", function() {
+  var emojis = document.getElementById("emojis");
+
+  if (emojis.style.display === "none") {
+    emojis.style.display = "block";
+  } else {
+    emojis.style.display = "none";
+  }
+});
+
+// // emoji group
+let emojiGroup=[]
+let emojisTag = document.getElementById("emojis").getElementsByTagName("img");
+for(dom of emojisTag ){ //replace dom loop
+  let _this=dom;
+  dom.addEventListener("click",function(){
+    //console.log(_this.id)
+    document.getElementById("createPost").value+=("%"+_this.id+"%")
+  })
+  let tempemj={}
+  tempemj.emojiName=dom.id
+  tempemj.src=dom.src
+
+  emojiGroup.push(tempemj)
+ }
+
 //create post function
 function createPost(content) {
   //store img data

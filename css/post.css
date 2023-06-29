@@ -729,46 +729,6 @@
             }
 
 /*******************modified******************/          
-#postmebebe {
-  display: flex;
-  justify-content: center;
-  height: 10px;
-  width: 10px;
-}
-/* tooltip affect */
-/* #postmebebe::before,
-#postmebebe::after{
-  --scale: 0;
-  position: absolute;
-  top: -5rem;
-  left: 50%;
-  transform: translateX(720%) translateY(696%) scale(var(--scale));
-  transition: 150ms transform;
-  transform-origin: bottom center;
-}
-
-#postmebebe::before{
-  content: attr(data-tooltip);
-  color: white;
-  width: max-content;
-  max-width: 100%;
-  padding: .5rem;
-  border-radius: .3rem;
-  background: black;
-  text-align: center;
-  font-size: 9px;
-}
-
-#postmebebe:hover::before{
-  --scale: 1;
-}
-
-#postmebebe::after{
-  content:"";
-  background-color: #333;
-  border: 10px solid transparent;
-  border-top: black;
-} */
 
 #submitbtn {
   height: 50px;
