@@ -37,7 +37,7 @@
                 <!-- <label class="btn btn-primary" for="create-post">New post</label> -->
 
                 <button id="createprofilebtn" class="btn btn-primary rounded-5 fw-bold" data-bs-toggle="modal"
-                    data-bs-target="#createprofile">
+                    data-bs-target="#editProfileModal">
                     Edit Profile
                 </button>
                 <div class="profile-pic">
@@ -56,7 +56,7 @@
                     </div>
                     <div class="handle">
                         <h4 id="name">Username</h4>
-                       
+
                     </div>
                 </a>
                 <div class="sidebar">
@@ -205,7 +205,7 @@
                     <div class="wrapper">
                         <section class="post">
                             <header>Create Post</header>
-                            <form id="postForm" class="postForm"action ="">
+                            <form id="postForm" class="postForm" action="">
                                 <div class="content">
                                     <img src="img/donut.jpg" alt="logo">
                                     <div class="details">
@@ -225,15 +225,36 @@
                                 </div>
                                 <div class="options">
                                     <p>Add to Your Post</p>
+
+                                    <ul id="emojis" style="display: none;">
+                                        <li><img src="./img/cry.png" id="cry" class="emoji"></li>
+                                        <li><img src="./img/happy.png" id="happy" class="emoji"></li>
+                                        <li> <img src="./img/hearteye.png" id="hearteye" class="emoji"></li>
+                                        <li> <img src="./img/laughtear.png" id="laughtear" class="emoji"></li>
+                                        <li> <img src="./img/heart.png" id="heart" class="emoji"></li>
+                                    </ul>
+
+
                                     <ul class="list">
+                                        <li id="emojis" style="display: none;">
+                                            <img src="./img/cry.png" id="cry" class="emoji">
+                                            <img src="./img/happy.png" id="happy" class="emoji">
+                                             <img src="./img/hearteye.png" id="hearteye" class="emoji">
+                                             <img src="./img/laughtear.png" id="laughtear" class="emoji">
+                                             <img src="./img/heart.png" id="heart" class="emoji">
+                                        </li>
+
+
                                         <li><img src="img/gallery.svg" alt="gallery"></li>
                                         <li><img src="img/tag.svg" alt="gallery"></li>
-                                        <li><img src="img/emoji.svg" alt="gallery"></li>
+                                        <li><img id="showImagesButton" src="img/emoji.svg" alt="gallery"></li>
                                         <li><img src="img/mic.svg" alt="gallery"></li>
                                         <li><img src="img/more.svg" alt="gallery"></li>
                                     </ul>
+
                                 </div>
-                                <button  type="submit" id="profilePost">Post</button>
+
+                                <button type="submit" id="profilePost">Post</button>
                             </form>
                         </section>
                         <section class="audience">
@@ -310,7 +331,7 @@
                     <div class="profile-content">
                         <h2 class="title">
                             <p id="fullName" class="text-muted">@dddd</p>
-                        <p id="bio" class="text-muted">@dddd</p>
+                            <p id="bio" class="text-muted">@dddd</p>
 
 
                             <span>Designer & Developer</span>
@@ -451,7 +472,7 @@
                             <button class="btn">Decline</button>
                         </div>
                     </div>
-                    
+
 
                 </div>
 
