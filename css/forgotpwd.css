@@ -17,8 +17,13 @@
     src: url(Puffy-gxW55.otf);
   }
 
+html, body {
+  height: 100%;
+}
+
 body{
-    background-image: url(img/1color.png) ;
+    background-image: url(../img/1color.png);
+    background-size: 100% 100%;
 }
 
 .form {
