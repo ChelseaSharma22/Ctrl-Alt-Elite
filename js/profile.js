@@ -129,8 +129,8 @@ function moreInfo() {
             userFullName.innerHTML = data.fullName;
             bio.innerHTML = data.bio;
             ProfileName.innerHTML = data.fullName;
-            userFullName1.innerHTML = data.username.substr(0,loginData.username.length-5);;
-            userFullName2.innerHTML = "Welcome " + data.fullName + " !";;
+            userFullName1.innerHTML = data.username.substr(0,loginData.username.length-5);
+            userFullName2.innerHTML = "Welcome " + data.fullName + " !";
 
 
             
