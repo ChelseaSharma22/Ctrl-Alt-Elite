@@ -17,12 +17,6 @@
             integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
             crossorigin="anonymous"></script>
 
-        <!-- Run BEFORE page is finished loading (before window.onload): -->
-        <!-- <script src="auth.js"></script>  -->
-        <!-- <script>
-        if (loggedIn() === false) window.location.replace("index.html");
-        </script> -->
-
     </head>
 
     <body>
@@ -207,13 +201,13 @@
                                     </div>
                                     <div class="options">
                                         <p>Add to Your Post</p>
-                                        <ul id="emojis" style="display: none;">
-                                            <li><img src="./img/emoji/cry.png" id="cry" class="emoji"></li>
-                                            <li><img src="./img/emoji/happy.png" id="happy" class="emoji"></li>
-                                            <li> <img src="./img/emoji/hearteye.png" id="hearteye" class="emoji"></li>
-                                            <li> <img src="./img/emoji/laughtear.png" id="laughtear" class="emoji"></li>
-                                            <li> <img src="./img/emoji/heart.png" id="heart" class="emoji"></li>
-                                        </ul>
+                                        <li id="emojis" style="display: none;">
+                                            <img src="./img/emoji/cry.png" id="cry" class="emoji">
+                                            <img src="./img/emoji/happy.png" id="happy" class="emoji">
+                                             <img src="./img/emoji/hearteye.png" id="hearteye" class="emoji">
+                                             <img src="./img/emoji/laughtear.png" id="laughtear" class="emoji">
+                                             <img src="./img/emoji/heart.png" id="heart" class="emoji">
+                                        </li>
                                         <ul class="list">
                                             <li><img src="img/gallery.svg" alt="gallery"></li>
                                             <li><img src="img/tag.svg" alt="gallery"></li>
@@ -302,7 +296,7 @@
                             <p id="bio" class="text-muted">@dddd</p>
 
 
-                                <span>Designer & Developer</span>
+                                <span>Ctrl-Alt-Elite & Doughnut Diaries</span>
                                 <!--<button   class="btn btn-primary" for="create-post" id="editPro" >Edit profile</button>-->
                                 <div>
 
