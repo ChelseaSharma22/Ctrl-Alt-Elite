@@ -1,0 +1,127 @@
+/* Declare Color pallete roots */
+:root {
+    --violet: #925E78;
+    --purple: #BD93BD;
+    --white: #F2EDEB;
+    --pink: #F05365;
+    --yellow: #FABC2A; 
+}
+/*default*/
+html, body {
+    height: 100%;
+}
+/*font*/
+@font-face {
+    font-family:ballonFont;
+    src: url(Balloons-YYVy.ttf);
+  }  
+
+body {
+    background-image: url(../img/background1.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+#weblogo {
+    border-radius: 50%;
+    width: 200px;
+    display: block;
+    margin: 0px auto 10px auto;
+    cursor: pointer;
+}
+
+h6, h3 {
+    font-family: ballonFont;
+    font-weight: bolder;
+}
+
+h3 {
+    text-align: center;
+    color: var(--violet);
+}
+
+#intro {
+    background-color: var(--yellow);
+    gap: 10px;
+    padding: 10px 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    font-family: inherit;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+/****************************************game content************************************************/
+#gamediv {
+    width: 500px;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+    background-color: white;
+}
+
+#character {
+    width: 50px;
+    height: 50px;
+    background-image: url(../img/game/donut1.png);
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 30px;
+    right: calc(100% - 100px);
+}
+
+#ground {
+    width: 100%;
+    height: 30px;
+    background-image: url(../img/game/ground1.jpg);
+    position: absolute;
+    bottom: 0;
+}
+
+.block {
+    width: 40px;
+    height: 36px;
+    position: absolute;
+    bottom: 30px;
+    right: 0;
+}
+.block1{
+    background: url(../img/game/rock1.png);
+}
+.block2{
+    background: url(../img/game/rock2.png);
+}
+.block3{
+    background: url(../img/game/rock3.png);
+}
+
+#gameOver {
+    position: absolute;
+    width: fit-content;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+#btn {
+    position: absolute;
+    left: 50%;
+    top: 35%;
+    transform: translate(-50%, -35%);
+}
+
+#scoreheader {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+/************************************small screen setting********************************************/
+@media only screen and (max-width: 750px) {
+    body {
+        background-color: var(--purple);
+        background-image: none;
+    }
+}
+

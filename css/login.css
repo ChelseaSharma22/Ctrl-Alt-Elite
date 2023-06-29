@@ -1,0 +1,247 @@
+/* Declare Color pallete roots */
+:root {
+    --violet: #925E78;
+    --purple: #BD93BD;
+    --white: #F2EDEB;
+    --pink: #F05365;
+    --yellow: #FABC2A; 
+}
+
+/*font*/
+@font-face {
+  font-family:ballonFont;
+  src: url(Balloons-YYVy.ttf);
+}
+
+/*default*/
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body{
+  background-image: url(../img/background2.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+ }
+
+/**********************************************header part***************************************************/
+h1{
+   text-align: center;
+   font-family:ballonFont;
+   font-size: 50px;
+   color: var(--yellow);
+   }
+
+#logo {
+  cursor: pointer;
+}
+
+#logo, #logo1{
+   height: 140px;
+   width: 140px;
+ }
+
+#head{
+ display: flex;
+ justify-content: center;
+}
+   
+/*******************************************form part******************************************************/
+#row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 100px;
+  justify-content: center;
+  align-content: center;
+}
+
+.form {
+  width: 300px;
+  background-color:#EE9BAA;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px 20px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  border-radius: 5px 0 0 5px;
+  font-family: inherit;
+}
+
+#registerform {
+  border-radius: 5px;
+}
+
+.input {
+  font-size: 15px;
+  padding: 15px 10px;
+  border-radius: 5px;
+  border: none;
+  margin-top: 10px;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2),
+    0 0.5px 0.5px rgba(0, 0, 0, 0.2);
+  outline: none;
+}
+
+.input:focus {
+  outline: 1.2px solid #1877f2;
+}
+
+#loginBtn {
+  margin-top: 10px;
+  width: 100%;
+  padding: 10px 20px;
+  align-self: center;
+  background: var(--violet);
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+#loginBtn:hover {
+  background: #674254;
+}
+
+#forgotPassword {
+  text-align: center;
+  position: relative;
+  margin-top: 10px;
+  width: 100%;
+  font-size: 13px;
+  align-self: center;
+  font-weight: bold;
+  color: #04a2b6;
+}
+
+#forgotPassword::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 0.5px;
+  bottom: -25px;
+  left: 0;
+  background: #81c2e8;
+}
+
+#forgotPassword:hover {
+  text-decoration: underline;
+}
+
+#createAccountBtn {
+  margin-top: 40px;
+  margin-bottom: 10px;
+  padding: 15px 15px;
+  align-self: center;
+  background: var(--yellow);
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+#signupButton {
+  margin-top: 10px;
+  padding: 15px 15px;
+  align-self: center;
+  background: var(--yellow);
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+
+}
+
+#createAccountBtn:hover, #signupButton:hover {
+  background: #cb9822;
+}
+.loader {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: transparent;
+  border-radius: 50%;
+}
+#loader_cont {
+  display: none;
+  z-index: 3;
+  height: 1000px;
+  align-items: center;
+  justify-content: center;
+  width: 1000px;
+  position: absolute;
+}
+
+.loader {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: transparent;
+  width: 36px;
+  height: 36px;
+}
+
+.loader {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: transparent;
+  width: 36px;
+  height: 36px;
+  animation: spin89345 1s linear infinite;
+}
+
+@keyframes spin89345 {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+ 
+/***********************************************card part*******************************************************/
+.card{
+  width: 300px;
+  background-color:#EE9BAA;
+  -ms-flex-align:start;
+  gap: 10px;
+  padding: 10px 20px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  border-radius: 0 5px 5px 0;
+  font-family: inherit;
+  text-align: center;
+}
+
+p{
+  text-align: center;
+}
+
+h5{
+  text-align: center;
+  
+}
+
+/******************************************For sign up page*********************************************************/
+main {
+  display: flex;
+  margin-top: 100px;
+  justify-content: center;
+  align-content: center;
+}
+
+/***********************************************small screen setting**********************************************/
+@media only screen and (max-width: 750px) {
+  body {
+    background-color: var(--purple);
+    background-image: none;
+  }
+  head {
+    display: block;
+  }
+  #logo1 {
+    display: none;
+  }
+  .card, .form {
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+}
