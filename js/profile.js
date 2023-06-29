@@ -15,6 +15,10 @@ const loginData = loggedIn();
 console.log(loginData);
 const currentUser = loginData.username.substr(0,loginData.username.length-5);
 const userFullName = document.getElementById("fullName");
+const userFullName1 = document.getElementById("username1");
+const userFullName2 = document.getElementById("fullName1");
+
+
 const userCreationDate = document.getElementById("createdAt");
 const signoutBtn = document.getElementById("signoutBtn");
 const bio = document.getElementById("bio");
@@ -28,7 +32,7 @@ window.addEventListener("load", function () {
   moreInfo();
  
   saveEditsBtn.onclick = updateProfile;
-  document.getElementById("username").innerText = "Welcome " + currentUser + " !";
+  document.getElementById("fullName1").innerText = "Welcome " + userFullName1 + " !";
   document.getElementById("username1").innerHTML = currentUser;
 
 });
@@ -120,6 +124,10 @@ function moreInfo() {
             userFullName.innerHTML = data.fullName;
             bio.innerHTML = data.bio;
             ProfileName.innerHTML = data.fullName;
+            userFullName1.innerHTML = data.username.substr(0,loginData.username.length-5);;
+            userFullName2.innerHTML = "Welcome " + data.fullName + " !";;
+
+
             
         });
 }
